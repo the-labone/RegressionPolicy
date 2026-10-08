@@ -16,13 +16,13 @@
   <a href="assets/teaser.pdf"><img src="assets/teaser.png" width="100%" alt="HT-Policy models heavy-tailed action residuals to close the performance gap with generative policies."></a>
 </p>
 
-We revisit the gap between regression and generative policies from the perspective of statistic modeling. We attribute the performance gap between MSE- and Flow-Policies to observation-dependent and heavy-tailed residuals. By modeling the heavy tails explicitly, our model (HT-Policy) achieves competitive performance with generative policies with higher training and inference efficiency.
+We revisit the gap between regression and generative policies from the perspective of statistic modeling. Our finding is the performance gap between MSE- and Flow-Policies is attributed to observation-dependent and heavy-tailed residuals. By modeling the heavy tails explicitly, our model (HT-Policy) achieves competitive performance with generative policies, with higher training and inference efficiency.
 
-This repository has two parts. The first part provides an easy-to-use [HT-Loss implementation](#ht-loss-usage). It has an inferface similar to PyTorch's `MSELoss`. The second part provides code for our experiments on different benchmarks, starting from [installation](#installation).
+The first part of this repo provides an easy-to-use [HT-Loss implementation](#ht-loss-usage). It has an inferface similar to PyTorch's `MSELoss`. The second part provides code for our experiments on different benchmarks, starting from [installation](#installation).
 
 <a id="release-plan"></a>
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/release-plan-dark.svg"><img src="assets/readme/icons/release-plan.svg" width="24" height="24" align="absmiddle" alt=""></picture> &nbsp; Release Plan
+## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/release-plan-dark.svg"><img src="assets/readme/icons/release-plan.svg" width="24" height="24" align="texttop" alt=""></picture>&nbsp;&nbsp;Release Plan
 
 - [x] PyTorch implementation of HT-Loss
 - [x] RoboMimic training and evaluation code
@@ -35,7 +35,7 @@ This repository has two parts. The first part provides an easy-to-use [HT-Loss i
 
 <a id="ht-policy-demos"></a>
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/demos-dark.svg"><img src="assets/readme/icons/demos.svg" width="24" height="24" align="absmiddle" alt=""></picture> &nbsp; HT-Policy Demos
+## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/demos-dark.svg"><img src="assets/readme/icons/demos.svg" width="24" height="24" align="texttop" alt=""></picture>&nbsp;&nbsp;HT-Policy Demos
 
 <p align="center">
   <img src="assets/videos/peel-note.gif" width="24%" alt="Peel Note — real-world robot demonstration">
@@ -52,7 +52,7 @@ This repository has two parts. The first part provides an easy-to-use [HT-Loss i
 
 <a id="ht-loss-usage"></a>
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/ht-loss-dark.svg"><img src="assets/readme/icons/ht-loss.svg" width="24" height="24" align="absmiddle" alt=""></picture> &nbsp; HT-Loss Usage
+## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/ht-loss-dark.svg"><img src="assets/readme/icons/ht-loss.svg" width="24" height="24" align="texttop" alt=""></picture>&nbsp;&nbsp;HT-Loss Usage
 
 ```bash
 # From the repository root
@@ -73,7 +73,7 @@ Add a scale head alongside your action head to predict `raw_scale` from shared f
 
 <a id="installation"></a>
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/installation-dark.svg"><img src="assets/readme/icons/installation.svg" width="24" height="24" align="absmiddle" alt=""></picture> &nbsp; Installation
+## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/installation-dark.svg"><img src="assets/readme/icons/installation.svg" width="24" height="24" align="texttop" alt=""></picture>&nbsp;&nbsp;Installation
 
 From this section, we provide codes for training and evaluating HT-Policy on different benchmarks. The first step is to install [uv](https://docs.astral.sh/uv/getting-started/installation/) and clone the repository:
 
@@ -100,7 +100,7 @@ uv run scripts/install.py robomimic
 
 <a id="training"></a>
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/training-dark.svg"><img src="assets/readme/icons/training.svg" width="24" height="24" align="absmiddle" alt=""></picture> &nbsp; Training
+## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/training-dark.svg"><img src="assets/readme/icons/training.svg" width="24" height="24" align="texttop" alt=""></picture>&nbsp;&nbsp;Training
 
 ### RoboMimic
 
@@ -114,9 +114,7 @@ uv run scripts/download_robomimic.py --task lift --split ph --modality state
 uv run scripts/download_robomimic.py --task lift --split ph --modality vision
 ```
 
-#### Launch training
-
-**HT-Policy Transformer (State observations)**
+#### HT-Policy Transformer (State observations)
 
 ```bash
 uv run --no-sync python -m ht_regression.training.train \
@@ -124,7 +122,7 @@ uv run --no-sync python -m ht_regression.training.train \
   dataset.path=data/robomimic/lift/ph/low_dim_abs.hdf5
 ```
 
-**HT-Policy UNet (Image observations)**
+#### HT-Policy UNet (Image observations)
 
 ```bash
 uv run --no-sync python -m ht_regression.training.train \
@@ -139,7 +137,7 @@ uv run --no-sync python -m ht_regression.training.train \
 
 <a id="evaluation"></a>
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/evaluation-dark.svg"><img src="assets/readme/icons/evaluation.svg" width="24" height="24" align="absmiddle" alt=""></picture> &nbsp; Evaluation
+## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/evaluation-dark.svg"><img src="assets/readme/icons/evaluation.svg" width="24" height="24" align="texttop" alt=""></picture>&nbsp;&nbsp;Evaluation
 
 | Model | Benchmark | Checkpoints |
 | --- | --- | --- |
