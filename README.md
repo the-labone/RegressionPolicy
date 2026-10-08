@@ -44,11 +44,12 @@ This repository contains the code for **Residual Modeling Closes the Regression 
   </picture>
 </p>
 
-## Use HT-Loss
+## HT-Loss Usage
 
 ```bash
 # From the repository root
 uv pip install ./ht_loss
+# pip install ./ht_loss
 ```
 
 ```python
