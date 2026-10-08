@@ -21,7 +21,7 @@ This repository contains the code for **Residual Modeling Closes the Regression 
 - [ ] HT-Policy checkpoints for RoboMimic vision policies
 - [ ] Checkpoints trained with other objectives
 
-## Demos of HT-Policy
+## HT-Policy Demos
 
 <p align="center">
   <img src="assets/videos/peel-note.gif" width="24%" alt="Peel Note — real-world robot demonstration">
@@ -56,44 +56,26 @@ Add a scale head alongside your action head to predict `raw_scale` from shared f
 
 ## Installation
 
-Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and clone this repository:
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and clone the repository:
 
 ```bash
 git clone https://github.com/the-labone/RegressionPolicy.git
 cd RegressionPolicy
 ```
 
-### RoboMimic
-
 ```bash
 uv run scripts/install.py robomimic
 ```
 
-### GR00T (evaluation)
+**Options** — replace `robomimic` with your selection:
 
-#### RoboCasa-GR1
-
-```bash
-uv run scripts/install.py gr1
-```
-
-#### SimplerEnv
-
-```bash
-uv run scripts/install.py simpler
-```
-
-### π0.5 (evaluation)
-
-```bash
-uv run scripts/install.py pi05
-```
-
-### Cosmos (evaluation)
-
-```bash
-uv run scripts/install.py cosmos
-```
+| Option | Environment |
+| --- | --- |
+| `robomimic` | RoboMimic training and evaluation |
+| `gr1` | GR00T evaluation on RoboCasa-GR1 |
+| `simpler` | GR00T evaluation on SimplerEnv |
+| `pi05` | π0.5 evaluation on LIBERO |
+| `cosmos` | Cosmos evaluation on LIBERO |
 
 ## Training
 
