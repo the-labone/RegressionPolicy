@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="#use-ht-loss">HT-Loss</a> &nbsp;·&nbsp;
+  <a href="#ht-loss-usage">HT-Loss</a> &nbsp;·&nbsp;
   <a href="#installation">Installation</a> &nbsp;·&nbsp;
   <a href="#training">Training</a> &nbsp;·&nbsp;
   <a href="#evaluation">Evaluation</a>
@@ -44,7 +44,7 @@ This repository contains the code for **Residual Modeling Closes the Regression 
   </picture>
 </p>
 
-## HT-Loss Usage
+## HT-Loss usage
 
 ```bash
 # From the repository root
@@ -61,7 +61,7 @@ loss = criterion(prediction, target, raw_scale)
 loss.backward()
 ```
 
-Add a scale head alongside your action head to predict `raw_scale` from shared features. Only PyTorch is required. See [HT-Loss](ht_loss) for the scale head example and options.
+Add a scale head alongside your action head to predict `raw_scale` from shared features. Only PyTorch is required. See [HT-Loss](ht_loss/README.md) for the scale head example and options.
 
 ## Installation
 
