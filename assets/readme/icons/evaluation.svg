@@ -1,11 +1,12 @@
 <!-- Lucide: chart-no-axes-combined, revision a04f228cd01185e09c188b7227b9600c08c565ec. See LICENSE.lucide. -->
+<!-- Four pixels of bottom padding align the drawing with heading capitals when the image uses absmiddle. -->
 <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
-  height="24"
-  viewBox="0 0 24 24"
+  height="28"
+  viewBox="0 0 24 28"
   fill="none"
-  stroke="#6366f1"
+  stroke="#5b68c6"
   stroke-width="1.75"
   stroke-linecap="round"
   stroke-linejoin="round"

@@ -22,7 +22,7 @@ The first part of this repo provides an easy-to-use [HT-Loss implementation](#ht
 
 <a id="release-plan"></a>
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/release-plan-dark.svg"><img src="assets/readme/icons/release-plan.svg" width="24" height="24" align="texttop" alt=""></picture>&nbsp;&nbsp;Release Plan
+## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/release-plan-dark.svg"><img src="assets/readme/icons/release-plan.svg" width="24" height="28" align="absmiddle" alt=""></picture>&nbsp;&nbsp;Release Plan
 
 - [x] PyTorch implementation of HT-Loss
 - [x] RoboMimic training and evaluation code
@@ -35,7 +35,7 @@ The first part of this repo provides an easy-to-use [HT-Loss implementation](#ht
 
 <a id="ht-policy-demos"></a>
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/demos-dark.svg"><img src="assets/readme/icons/demos.svg" width="24" height="24" align="texttop" alt=""></picture>&nbsp;&nbsp;HT-Policy Demos
+## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/demos-dark.svg"><img src="assets/readme/icons/demos.svg" width="24" height="28" align="absmiddle" alt=""></picture>&nbsp;&nbsp;HT-Policy Demos
 
 <p align="center">
   <img src="assets/videos/peel-note.gif" width="24%" alt="Peel Note — real-world robot demonstration">
@@ -52,7 +52,7 @@ The first part of this repo provides an easy-to-use [HT-Loss implementation](#ht
 
 <a id="ht-loss-usage"></a>
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/ht-loss-dark.svg"><img src="assets/readme/icons/ht-loss.svg" width="24" height="24" align="texttop" alt=""></picture>&nbsp;&nbsp;HT-Loss Usage
+## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/ht-loss-dark.svg"><img src="assets/readme/icons/ht-loss.svg" width="24" height="28" align="absmiddle" alt=""></picture>&nbsp;&nbsp;HT-Loss Usage
 
 ```bash
 # From the repository root
@@ -73,7 +73,7 @@ Add a scale head alongside your action head to predict `raw_scale` from shared f
 
 <a id="installation"></a>
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/installation-dark.svg"><img src="assets/readme/icons/installation.svg" width="24" height="24" align="texttop" alt=""></picture>&nbsp;&nbsp;Installation
+## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/installation-dark.svg"><img src="assets/readme/icons/installation.svg" width="24" height="28" align="absmiddle" alt=""></picture>&nbsp;&nbsp;Installation
 
 From this section, we provide codes for training and evaluating HT-Policy on different benchmarks. The first step is to install [uv](https://docs.astral.sh/uv/getting-started/installation/) and clone the repository:
 
@@ -100,7 +100,7 @@ uv run scripts/install.py robomimic
 
 <a id="training"></a>
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/training-dark.svg"><img src="assets/readme/icons/training.svg" width="24" height="24" align="texttop" alt=""></picture>&nbsp;&nbsp;Training
+## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/training-dark.svg"><img src="assets/readme/icons/training.svg" width="24" height="28" align="absmiddle" alt=""></picture>&nbsp;&nbsp;Training
 
 ### RoboMimic
 
@@ -137,7 +137,7 @@ uv run --no-sync python -m ht_regression.training.train \
 
 <a id="evaluation"></a>
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/evaluation-dark.svg"><img src="assets/readme/icons/evaluation.svg" width="24" height="24" align="texttop" alt=""></picture>&nbsp;&nbsp;Evaluation
+## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/evaluation-dark.svg"><img src="assets/readme/icons/evaluation.svg" width="24" height="28" align="absmiddle" alt=""></picture>&nbsp;&nbsp;Evaluation
 
 | Model | Benchmark | Checkpoints |
 | --- | --- | --- |
