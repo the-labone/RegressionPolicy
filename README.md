@@ -16,8 +16,9 @@ This repository contains the code for **Residual Modeling Closes the Regression 
 - [x] PyTorch implementation of HT-Loss
 - [x] RoboMimic training and evaluation code
 - [x] VLA evaluation code
-- [x] HT-Policy checkpoints for RoboMimic state policies and VLA models
-- [ ] VLA training code
+- [x] HT-Policy checkpoints for RoboMimic state policies
+- [x] HT-Policy checkpoints VLA/WAM models
+- [ ] VLA/WAM training code
 - [ ] HT-Policy checkpoints for RoboMimic vision policies
 - [ ] Checkpoints trained with other objectives
 
