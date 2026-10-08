@@ -107,7 +107,7 @@ uv run scripts/download_robomimic.py --task lift --split ph --modality state
 uv run scripts/download_robomimic.py --task lift --split ph --modality vision
 ```
 
-### Train
+### Launch policy training
 
 **HT-Policy · Transformer · State observations**
 
