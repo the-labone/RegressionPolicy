@@ -6,13 +6,6 @@
 </p>
 
 <p align="center">
-  <a href="#ht-loss-usage">HT-Loss</a> &emsp;&emsp;
-  <a href="#installation">Installation</a> &emsp;&emsp;
-  <a href="#training">Training</a> &emsp;&emsp;
-  <a href="#evaluation">Evaluation</a>
-</p>
-
-<p align="center">
   <a href="assets/teaser.pdf"><img src="assets/teaser.png" width="100%" alt="HT-Policy models heavy-tailed action residuals to close the performance gap with generative policies."></a>
 </p>
 
