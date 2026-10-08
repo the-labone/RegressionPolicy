@@ -44,7 +44,7 @@ This repository contains the code for **Residual Modeling Closes the Regression 
   </picture>
 </p>
 
-## HT-Loss usage
+## HT-Loss Usage
 
 ```bash
 # From the repository root
