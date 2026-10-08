@@ -1,5 +1,7 @@
 __pycache__/
 __MACOSX/
+tests/
+/videos/
 *.py[cod]
 .ruff_cache/
 *.egg-info/
