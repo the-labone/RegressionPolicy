@@ -21,7 +21,7 @@ This repository contains the code for **Residual Modeling Closes the Regression 
 - [ ] HT-Policy checkpoints for RoboMimic vision policies
 - [ ] Checkpoints trained with other objectives
 
-## Demos
+## Demos of HT-Policy
 
 <p align="center">
   <img src="assets/videos/peel-note.gif" width="24%" alt="Peel Note — real-world robot demonstration">
