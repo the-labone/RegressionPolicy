@@ -1,8 +1,10 @@
 <h1 align="center">Residual Modeling for Regression Policies</h1>
 
 <p align="center">
-  <!-- Paper and Project Page URLs: pending. Keep the images adjacent for a continuous navigation bar. -->
-  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/paper-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/paper.svg"><img src="assets/readme/paper.svg" width="105" height="42" alt="Paper"></picture><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/project-page-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/project-page.svg"><img src="assets/readme/project-page.svg" width="161" height="42" alt="Project Page"></picture><a href="https://huggingface.co/collections/yuchen0187/regressionpolicy"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/models-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/models.svg"><img src="assets/readme/models.svg" width="119" height="42" alt="Models"></picture></a>
+  <!-- Paper and Project Page URLs: pending. -->
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/paper-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/paper.svg"><img src="assets/readme/paper.svg" width="105" height="42" alt="Paper"></picture>&nbsp;&nbsp;
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/project-page-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/project-page.svg"><img src="assets/readme/project-page.svg" width="161" height="42" alt="Project Page"></picture>&nbsp;&nbsp;
+  <a href="https://huggingface.co/collections/yuchen0187/regressionpolicy"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/models-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/models.svg"><img src="assets/readme/models.svg" width="119" height="42" alt="Models"></picture></a>
 </p>
 
 <p align="center">
@@ -62,7 +64,7 @@ loss = criterion(prediction, target, raw_scale)
 loss.backward()
 ```
 
-Add a scale head alongside your action head to predict `raw_scale` from shared features. Only PyTorch is required. See [HT-Loss](ht_loss/README.md) for the scale head example and options.
+You can add a scale head alongside the action head to predict `raw_scale` from shared features. See [HT-Loss](ht_loss/README.md) for the scale head example and options.
 
 <a id="installation"></a>
 
@@ -96,6 +98,8 @@ uv run scripts/install.py robomimic
 ## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/training-dark.svg"><img src="assets/readme/icons/training.svg" width="24" height="28" align="absmiddle" alt=""></picture>&nbsp;&nbsp;Training
 
 ### RoboMimic
+
+The two examples below show how to train Transformer- and UNet-based policies on RoboMimic. Both architectures support state- and vision-based observations; simply choose the appropriate configuration and dataset for your setup.
 
 #### Prepare dataset
 

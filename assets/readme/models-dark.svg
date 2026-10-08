@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="102" height="36" viewBox="0 0 102 36" role="img" aria-labelledby="title">
   <title id="title">Models</title>
-  <path d="M0 .5h94.5a7 7 0 0 1 7 7v21a7 7 0 0 1-7 7H0" fill="#161B22" stroke="#30363D"/>
-  <path d="M.5 10v16" fill="none" stroke="#30363D"/>
+  <rect x=".5" y=".5" width="101" height="35" rx="7" fill="#161B22" stroke="#30363D"/>
   <g transform="translate(13 10) scale(.666667)">
     <circle cx="12" cy="11" r="8" fill="#FFD34E"/>
     <g fill="#68471B">
