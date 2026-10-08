@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.ruff_cache/
+*.egg-info/
+.venv/
+.deps/
+.environments/
+build/
+dist/
+evaluation_results/
+outputs/
+/data/
+/checkpoints/

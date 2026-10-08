@@ -1,0 +1,61 @@
+# @package _global_
+defaults:
+- /experiment/robomimic/_base/vision/ht_unet
+- _self_
+name: transport_ph_visual_ht_c_nu200_s41
+dataloader:
+  train:
+    num_workers: 4
+    persistent_workers: true
+  validation:
+    num_workers: 2
+    persistent_workers: true
+seed: 41
+dataset:
+  source_action_space: abs
+  normalization: minmax
+  obs_keys:
+  - robot0_eef_pos
+  - robot0_eef_quat
+  - robot0_gripper_qpos
+  - robot1_eef_pos
+  - robot1_eef_quat
+  - robot1_gripper_qpos
+  camera_keys:
+  - robot0_eye_in_hand_image
+  - robot1_eye_in_hand_image
+  - shouldercamera0_image
+  - shouldercamera1_image
+policy:
+  model:
+    down_dims:
+    - 512
+    - 1024
+    - 2048
+    diffusion_step_embed_dim: 128
+  action_start_index: 1
+training:
+  device: cuda:0
+  allow_tf32: true
+  evaluation_seed: ${seed}
+  compile:
+    enabled: true
+  trainer:
+    max_steps: 4245000
+    validate_every: 1415
+    eval_every: 70750
+    checkpoint_every: 70750
+    log_every: 10
+evaluation:
+  source_robosuite_version: 1.2.0
+  render_hw:
+  - 84
+  - 84
+  n_train: 6
+  n_test: 50
+  n_envs: 28
+  num_workers: 8
+  n_train_vis: 2
+  n_test_vis: 4
+  test_start_seed: 100000
+  render_camera_name: shouldercamera0

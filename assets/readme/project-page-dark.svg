@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="138" height="36" viewBox="0 0 138 36" role="img" aria-labelledby="title">
+  <title id="title">Project Page</title>
+  <rect width="138" height="36" fill="#161B22"/>
+  <path d="M0 .5h138M0 35.5h138M.5 10v16" fill="none" stroke="#30363D"/>
+  <g transform="translate(13 10) scale(.666667)" fill="none" stroke="#C9D1D9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="4" width="18" height="16" rx="3"/>
+    <path d="M3 9h18M7 6.5h.01M10 6.5h.01M8 13h8M8 16h5"/>
+  </g>
+  <text x="36" y="23" fill="#C9D1D9" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="500">Project Page</text>
+</svg>

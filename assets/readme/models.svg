@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="102" height="36" viewBox="0 0 102 36" role="img" aria-labelledby="title">
+  <title id="title">Models</title>
+  <path d="M0 .5h94.5a7 7 0 0 1 7 7v21a7 7 0 0 1-7 7H0" fill="#F6F8FA" stroke="#D8DEE4"/>
+  <path d="M.5 10v16" fill="none" stroke="#D8DEE4"/>
+  <g transform="translate(13 10) scale(.666667)">
+    <circle cx="12" cy="11" r="8" fill="#FFD34E"/>
+    <g fill="#68471B">
+      <circle cx="9" cy="10" r=".85"/>
+      <circle cx="15" cy="10" r=".85"/>
+    </g>
+    <path d="M9 13a3.3 3.3 0 0 0 6 0" fill="none" stroke="#68471B" stroke-width="1.25" stroke-linecap="round"/>
+    <path d="m3 14 2 5 4 1m-7-3 3 2m16-5-2 5-4 1m7-3-3 2" fill="none" stroke="#FFD34E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="36" y="23" fill="#343B45" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="500">Models</text>
+</svg>
