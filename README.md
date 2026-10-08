@@ -5,6 +5,13 @@
   <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/paper-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/paper.svg"><img src="assets/readme/paper.svg" width="90" height="36" alt="Paper"></picture><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/project-page-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/project-page.svg"><img src="assets/readme/project-page.svg" width="138" height="36" alt="Project Page"></picture><a href="https://huggingface.co/collections/yuchen0187/regressionpolicy"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/models-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/models.svg"><img src="assets/readme/models.svg" width="102" height="36" alt="Models"></picture></a>
 </p>
 
+<p align="center">
+  <a href="#use-ht-loss">HT-Loss</a> &nbsp;·&nbsp;
+  <a href="#installation">Installation</a> &nbsp;·&nbsp;
+  <a href="#training">Training</a> &nbsp;·&nbsp;
+  <a href="#evaluation">Evaluation</a>
+</p>
+
 This repository contains the code for **Residual Modeling Closes the Regression and Generative Policy Gap in Robot Learning**. We train a single pass regression model (HT-Policy) to achieve performance competitive with generative policies, with faster training and inference.
 
 <p align="center">
@@ -64,6 +71,8 @@ git clone https://github.com/the-labone/RegressionPolicy.git
 cd RegressionPolicy
 ```
 
+Install the environment you need:
+
 ```bash
 uv run scripts/install.py robomimic
 ```
@@ -115,7 +124,15 @@ uv run --no-sync python -m ht_regression.training.train \
 
 ## Evaluation
 
-### RoboMimic
+| Model | Benchmark | Checkpoints |
+| --- | --- | --- |
+| Transformer / UNet | RoboMimic | [Hugging Face](https://huggingface.co/yuchen0187/RegressionPolicy-RoboMimic) |
+| GR00T | RoboCasa-GR1 | [Hugging Face](https://huggingface.co/yuchen0187/RegressionPolicy-GR00T/tree/main/gr1) |
+| GR00T | SimplerEnv | [Hugging Face](https://huggingface.co/yuchen0187/RegressionPolicy-GR00T/tree/main/simpler) |
+| π0.5 | LIBERO | [Hugging Face](https://huggingface.co/yuchen0187/RegressionPolicy-Pi0.5) |
+| Cosmos | LIBERO | [Hugging Face](https://huggingface.co/yuchen0187/RegressionPolicy-Cosmos) |
+
+### Transformer / UNet · RoboMimic
 
 Download and evaluate the released Lift PH HT-Policy with a Transformer backbone:
 
@@ -130,11 +147,10 @@ uv run scripts/evaluate.py robomimic \
   --device cuda \
   --output-dir evaluation_results/robomimic_lift
 ```
+
 You can specify the checkpoint to evaluate with `--checkpoint`.
 
-### GR00T
-
-#### RoboCasa-GR1
+### GR00T · RoboCasa-GR1
 
 ```bash
 uv run scripts/download_checkpoint.py gr00t \
@@ -145,7 +161,7 @@ uv run scripts/evaluate.py gr1 \
   --output-dir evaluation_results/gr1
 ```
 
-#### SimplerEnv
+### GR00T · SimplerEnv
 
 Set `simpler_suite` to `bridge` or `fractal`:
 
@@ -160,7 +176,7 @@ uv run scripts/evaluate.py simpler \
   --output-dir evaluation_results/simpler_${simpler_suite}
 ```
 
-### π0.5
+### π0.5 · LIBERO
 
 ```bash
 uv run scripts/download_checkpoint.py pi05 \
@@ -173,7 +189,7 @@ uv run scripts/evaluate.py pi05 \
 
 By default, all four LIBERO suites are evaluated. Add `--suite libero_10` to select one suite.
 
-### Cosmos
+### Cosmos · LIBERO
 
 ```bash
 uv run scripts/download_checkpoint.py cosmos --all
