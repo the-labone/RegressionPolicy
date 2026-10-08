@@ -6,19 +6,23 @@
 </p>
 
 <p align="center">
-  <a href="#ht-loss-usage">HT-Loss</a> &nbsp;·&nbsp;
-  <a href="#installation">Installation</a> &nbsp;·&nbsp;
-  <a href="#training">Training</a> &nbsp;·&nbsp;
+  <a href="#ht-loss-usage">HT-Loss</a> &emsp;&emsp;
+  <a href="#installation">Installation</a> &emsp;&emsp;
+  <a href="#training">Training</a> &emsp;&emsp;
   <a href="#evaluation">Evaluation</a>
 </p>
-
-This repository contains the code for **Residual Modeling Closes the Regression and Generative Policy Gap in Robot Learning**. We train a single pass regression model (HT-Policy) to achieve performance competitive with generative policies, with faster training and inference.
 
 <p align="center">
   <a href="assets/teaser.pdf"><img src="assets/teaser.png" width="100%" alt="HT-Policy models heavy-tailed action residuals to close the performance gap with generative policies."></a>
 </p>
 
-## Release Plan
+We revisit the gap between regression and generative policies from the perspective of statistic modeling. We attribute the performance gap between MSE- and Flow-Policies to observation-dependent and heavy-tailed residuals. By modeling the heavy tails explicitly, our model (HT-Policy) achieves competitive performance with generative policies with higher training and inference efficiency.
+
+This repository has two parts. The first part provides an easy-to-use [HT-Loss implementation](#ht-loss-usage). It has an inferface similar to PyTorch's `MSELoss`. The second part provides code for our experiments on different benchmarks, starting from [installation](#installation).
+
+<a id="release-plan"></a>
+
+## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/release-plan-dark.svg"><img src="assets/readme/icons/release-plan.svg" width="24" height="24" align="absmiddle" alt=""></picture> &nbsp; Release Plan
 
 - [x] PyTorch implementation of HT-Loss
 - [x] RoboMimic training and evaluation code
@@ -29,7 +33,9 @@ This repository contains the code for **Residual Modeling Closes the Regression 
 - [ ] HT-Policy checkpoints for RoboMimic vision policies
 - [ ] Checkpoints trained with other objectives
 
-## HT-Policy Demos
+<a id="ht-policy-demos"></a>
+
+## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/demos-dark.svg"><img src="assets/readme/icons/demos.svg" width="24" height="24" align="absmiddle" alt=""></picture> &nbsp; HT-Policy Demos
 
 <p align="center">
   <img src="assets/videos/peel-note.gif" width="24%" alt="Peel Note — real-world robot demonstration">
@@ -44,7 +50,9 @@ This repository contains the code for **Residual Modeling Closes the Regression 
   </picture>
 </p>
 
-## HT-Loss Usage
+<a id="ht-loss-usage"></a>
+
+## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/ht-loss-dark.svg"><img src="assets/readme/icons/ht-loss.svg" width="24" height="24" align="absmiddle" alt=""></picture> &nbsp; HT-Loss Usage
 
 ```bash
 # From the repository root
@@ -63,9 +71,11 @@ loss.backward()
 
 Add a scale head alongside your action head to predict `raw_scale` from shared features. Only PyTorch is required. See [HT-Loss](ht_loss/README.md) for the scale head example and options.
 
-## Installation
+<a id="installation"></a>
 
-Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and clone the repository:
+## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/installation-dark.svg"><img src="assets/readme/icons/installation.svg" width="24" height="24" align="absmiddle" alt=""></picture> &nbsp; Installation
+
+From this section, we provide codes for training and evaluating HT-Policy on different benchmarks. The first step is to install [uv](https://docs.astral.sh/uv/getting-started/installation/) and clone the repository:
 
 ```bash
 git clone https://github.com/the-labone/RegressionPolicy.git
@@ -88,9 +98,13 @@ uv run scripts/install.py robomimic
 | `pi05` | π0.5 evaluation on LIBERO |
 | `cosmos` | Cosmos evaluation on LIBERO |
 
-## Training
+<a id="training"></a>
 
-### Prepare dataset
+## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/training-dark.svg"><img src="assets/readme/icons/training.svg" width="24" height="24" align="absmiddle" alt=""></picture> &nbsp; Training
+
+### RoboMimic
+
+#### Prepare dataset
 
 ```bash
 # RoboMimic Lift PH — state observations
@@ -100,9 +114,9 @@ uv run scripts/download_robomimic.py --task lift --split ph --modality state
 uv run scripts/download_robomimic.py --task lift --split ph --modality vision
 ```
 
-### Launch policy training
+#### Launch training
 
-**HT-Policy · Transformer · State observations**
+**HT-Policy Transformer (State observations)**
 
 ```bash
 uv run --no-sync python -m ht_regression.training.train \
@@ -110,7 +124,7 @@ uv run --no-sync python -m ht_regression.training.train \
   dataset.path=data/robomimic/lift/ph/low_dim_abs.hdf5
 ```
 
-**HT-Policy · UNet · Image observations**
+**HT-Policy UNet (Image observations)**
 
 ```bash
 uv run --no-sync python -m ht_regression.training.train \
@@ -123,7 +137,9 @@ uv run --no-sync python -m ht_regression.training.train \
 | `experiment=...` | [Task and backbone configurations](configs/experiment/robomimic) |
 | `objective=...` | `ht`, `mse`, `flow`, `mip`, `diffusion` |
 
-## Evaluation
+<a id="evaluation"></a>
+
+## <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/icons/evaluation-dark.svg"><img src="assets/readme/icons/evaluation.svg" width="24" height="24" align="absmiddle" alt=""></picture> &nbsp; Evaluation
 
 | Model | Benchmark | Checkpoints |
 | --- | --- | --- |
@@ -133,7 +149,7 @@ uv run --no-sync python -m ht_regression.training.train \
 | π0.5 | LIBERO | [Hugging Face](https://huggingface.co/yuchen0187/RegressionPolicy-Pi0.5) |
 | Cosmos | LIBERO | [Hugging Face](https://huggingface.co/yuchen0187/RegressionPolicy-Cosmos) |
 
-### Transformer / UNet · RoboMimic
+### Transformer / UNet on RoboMimic
 
 Download and evaluate the released Lift PH HT-Policy with a Transformer backbone:
 
@@ -151,7 +167,7 @@ uv run scripts/evaluate.py robomimic \
 
 You can specify the checkpoint to evaluate with `--checkpoint`.
 
-### GR00T · RoboCasa-GR1
+### GR00T on RoboCasa-GR1
 
 ```bash
 uv run scripts/download_checkpoint.py gr00t \
@@ -162,7 +178,7 @@ uv run scripts/evaluate.py gr1 \
   --output-dir evaluation_results/gr1
 ```
 
-### GR00T · SimplerEnv
+### GR00T on SimplerEnv
 
 Set `simpler_suite` to `bridge` or `fractal`:
 
@@ -177,7 +193,7 @@ uv run scripts/evaluate.py simpler \
   --output-dir evaluation_results/simpler_${simpler_suite}
 ```
 
-### π0.5 · LIBERO
+### π0.5 on LIBERO
 
 ```bash
 uv run scripts/download_checkpoint.py pi05 \
@@ -190,7 +206,7 @@ uv run scripts/evaluate.py pi05 \
 
 By default, all four LIBERO suites are evaluated. Add `--suite libero_10` to select one suite.
 
-### Cosmos · LIBERO
+### Cosmos on LIBERO
 
 ```bash
 uv run scripts/download_checkpoint.py cosmos --all
