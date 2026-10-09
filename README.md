@@ -1,9 +1,8 @@
 <h1 align="center">Residual Modeling for Regression Policies</h1>
 
 <p align="center">
-  <!-- Project Page URL: pending. -->
   <a href="https://arxiv.org/abs/2610.12231"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/paper-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/paper.svg"><img src="assets/readme/paper.svg" width="105" height="42" alt="Paper"></picture></a>&nbsp;&nbsp;
-  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/project-page-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/project-page.svg"><img src="assets/readme/project-page.svg" width="161" height="42" alt="Project Page"></picture>&nbsp;&nbsp;
+  <a href="https://the-labone.github.io/regression-policy-project/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/project-page-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/project-page.svg"><img src="assets/readme/project-page.svg" width="161" height="42" alt="Project Page"></picture></a>&nbsp;&nbsp;
   <a href="https://huggingface.co/collections/yuchen0187/regressionpolicy"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/models-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/models.svg"><img src="assets/readme/models.svg" width="119" height="42" alt="Models"></picture></a>
 </p>
 
