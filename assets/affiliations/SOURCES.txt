@@ -1,0 +1,8 @@
+University of Pennsylvania: inline header SVG from https://www.upenn.edu/
+Tsinghua University: https://upload.wikimedia.org/wikipedia/en/7/78/Tsinghua_University_logo_and_wordmark_in_Chinese_and_English_characters.svg
+Tsinghua University, English lockup: https://vi.tsinghua.edu.cn/image/sliderimages/slider4-5.jpg
+English lockup reference: https://vi.tsinghua.edu.cn/gk/xxbz/bzzh1/xhyhsbzzzyzh.htm
+The English lockup is displayed with its surrounding white margins clipped in CSS; the source image is unchanged.
+UC San Diego: https://www.ucsd.edu/_resources/img/logo_UCSD.png
+
+Retrieved 2026-10-08. Logos remain the property of their respective universities.

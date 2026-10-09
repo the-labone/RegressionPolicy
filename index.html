@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="HT-Policy: residual modeling for single-pass regression policies competitive with generative policies in robot learning.">
+    <meta name="theme-color" content="#fdfdfa">
+    <title>Residual Modeling Closes the Regression and Generative Policy Gap in Robot Learning</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preload" href="assets/fonts/source-sans-pro-regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="assets/katex/katex.min.css?v=0.19.0">
+    <link rel="stylesheet" href="styles.css?v=32a49f4eaa31">
+    <link rel="stylesheet" href="residual-scale-story.css?v=bf00f2f3cbd2">
+    <script src="demos.js?v=09b52f18461f" defer></script>
+    <script src="residual-illustration.js?v=c7d3911e5fc8" defer></script>
+    <script src="residual-scale-story.js?v=7481b8e53c1d" defer></script>
+    <script src="task-frames.js?v=501002978faa" defer></script>
+    <script src="citation.js?v=46b9172f37e4" defer></script>
+    <script src="efficiency.js?v=93a46eb5e418" type="module"></script>
+  </head>
+  <body>
+    <main>
+      <header class="project-header" aria-labelledby="project-title">
+        <div class="project-heading">
+          <span class="project-icon" aria-hidden="true">
+            <img src="assets/project-mark.svg?v=ac908767635e" alt="" width="136" height="80">
+          </span>
+          <h1 id="project-title">
+            <span class="project-title-line">Residual Modeling Closes the Regression and</span>
+            <span class="project-title-line">Generative Policy Gap in Robot Learning</span>
+          </h1>
+        </div>
+
+        <section class="authors-section" id="authors" aria-label="Authors">
+          <ul class="author-grid">
+            <li class="author-card">
+              <div class="author-avatar author-avatar--yuchen">
+                <img src="assets/authors/yuchen-zhou.png" alt="Yuchen Zhou" width="80" height="80" loading="eager" decoding="async">
+              </div>
+              <p class="author-name"><a class="author-link" href="https://www.yuchenzh.com/" target="_blank" rel="noopener">Yuchen Zhou<sup>1,*</sup></a></p>
+            </li>
+            <li class="author-card">
+              <img class="author-avatar" src="assets/authors/jiacheng-you.jpg" alt="Jiacheng You" width="80" height="80" loading="eager" decoding="async">
+              <p class="author-name"><a class="author-link" href="https://scholar.google.com/citations?user=FiP-TVUAAAAJ" target="_blank" rel="noopener">Jiacheng You<sup>2,*</sup></a></p>
+            </li>
+            <li class="author-card">
+              <img class="author-avatar" src="assets/authors/weikang-wan.jpg" alt="Weikang Wan" width="80" height="80" loading="eager" decoding="async">
+              <p class="author-name"><a class="author-link" href="https://wkwan7.github.io/" target="_blank" rel="noopener">Weikang Wan<sup>3</sup></a></p>
+            </li>
+            <li class="author-card">
+              <img class="author-avatar" src="assets/authors/weijun-dong.jpg" alt="Weijun Dong" width="80" height="80" loading="eager" decoding="async">
+              <p class="author-name"><a class="author-link" href="https://dwjshift.github.io/" target="_blank" rel="noopener">Weijun Dong<sup>3</sup></a></p>
+            </li>
+            <li class="author-card">
+              <img class="author-avatar author-avatar--yang" src="assets/authors/yang-gao.jpg" alt="Yang Gao" width="80" height="80" loading="eager" decoding="async">
+              <p class="author-name"><a class="author-link" href="https://people.iiis.tsinghua.edu.cn/~gaoyang/yang-gao.weebly.com/index.html" target="_blank" rel="noopener">Yang Gao<sup>2</sup></a></p>
+            </li>
+            <li class="author-card">
+              <img class="author-avatar" src="assets/authors/jiayuan-mao.jpg" alt="Jiayuan Mao" width="80" height="80" loading="eager" decoding="async">
+              <p class="author-name"><a class="author-link" href="https://jiayuanm.com/" target="_blank" rel="noopener">Jiayuan Mao<sup>1</sup></a></p>
+            </li>
+          </ul>
+          <ul class="author-affiliations" aria-label="Author affiliations">
+            <li><sup>1</sup> University of Pennsylvania</li>
+            <li><sup>2</sup> Tsinghua University</li>
+            <li><sup>3</sup> UC San Diego</li>
+          </ul>
+          <p class="author-note">* Equal contribution</p>
+        </section>
+
+        <nav class="project-links" aria-label="Project resources">
+          <a class="resource-link" href="https://arxiv.org/abs/2610.12231" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8l-5-5Zm0 0v5h5M9 12h6m-6 4h6" />
+            </svg>
+            <span>Paper</span>
+          </a>
+          <a class="resource-link" href="https://github.com/the-labone/RegressionPolicy">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16" />
+            </svg>
+            <span>Code</span>
+          </a>
+          <a class="resource-link" href="https://huggingface.co/collections/yuchen0187/regressionpolicy">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="m12 3 9 5-9 5-9-5 9-5Zm-9 5v9l9 5 9-5V8m-9 5v9M7.5 5.5l9 5" />
+            </svg>
+            <span>Models</span>
+          </a>
+        </nav>
+      </header>
+
+      <section class="project-overview" id="overview" aria-label="Research overview">
+        <figure class="teaser">
+          <a href="assets/figures/teaser.pdf?v=c1e8b2aff861" target="_blank" rel="noopener" aria-label="View the teaser figure as a full-resolution PDF">
+            <img src="assets/figures/teaser.svg?v=5385cd496386" width="2640" height="840" alt="Overview of residual modeling: heavy-tailed action residuals, the mismatch with Gaussian assumptions, and HT-Policy success rates compared with MSE-Policies and Flow-Policies or Diffusion Policy on GR1, SIMPLER, and RoboMimic.">
+          </a>
+        </figure>
+
+        <section class="abstract" id="abstract-title" aria-label="Abstract">
+          <p>
+            We revisit the gap between MSE-Policies and Flow-Policies from the perspective of statistical modeling: how action-prediction residuals shape policy optimization.
+            Our human demonstration data analysis reveals state-dependent residual scales and heavier-than-Gaussian tails.
+            We introduce heteroscedastic Student-<i>t</i> action regression (HT-Policies), which learns input-dependent residual scales and reduces the influence of heavy tails.
+            HT-Policies predict action chunks with a single feed-forward pass and achieve success rates competitive with generative policy baselines across four simulation benchmarks and real-robot evaluations, despite being faster in training and inference.
+          </p>
+        </section>
+      </section>
+
+      <section class="analysis-section" id="why-residual-modeling" aria-labelledby="analysis-title">
+        <h2 id="analysis-title">Why Residual Modeling? Insights from Data and Policies</h2>
+        <div class="scale-story" data-scale-story aria-label="Task progress and Gaussian scale mixing">
+          <div class="scale-story-layout">
+            <figure class="scale-story-episode">
+              <div class="scale-story-toolbar">
+                <h4>Sweep into Pile <span>· Bridge</span></h4>
+              </div>
+              <div class="scale-story-video">
+                <video data-scale-video muted playsinline preload="metadata" poster="assets/videos/sweep-into-pile.jpg" width="256" height="256" aria-label="Example Sweep into Pile episode from Bridge">
+                  <source src="assets/videos/sweep-into-pile.mp4" type="video/mp4">
+                </video>
+                <div class="scale-story-actions" data-scale-actions aria-hidden="true"></div>
+              </div>
+              <figcaption class="scale-story-episode-note"><span>Example episode</span><span class="scale-story-stage" data-scale-stage>Align and grasp</span></figcaption>
+            </figure>
+            <div class="scale-story-charts">
+              <h4 class="scale-story-chart-heading">Residual RMS <span>· task average</span></h4>
+              <div class="scale-story-progress" data-scale-progress>
+                <img src="assets/figures/residual-scale-progress.svg?v=2b554a691005" width="640" height="200" loading="lazy" decoding="async" alt="Task-average residual RMS for Sweep into Pile varies with episode progress, from about 0.190 at 5% to 0.337 at 95%. The curve is measured across the task, not from the example video.">
+              </div>
+              <div class="scale-story-mixture" data-scale-mixture>
+                <img src="assets/figures/gaussian-scale-mixture.svg?v=de76f6ae952b" width="460" height="156" loading="lazy" decoding="async" alt="Illustration: combining zero-mean Gaussians with different scales produces heavier tails than a Gaussian with the same variance.">
+                <p class="scale-story-mixture-fallback">Illustration · Scale mixture vs Gaussian with the same variance</p>
+              </div>
+            </div>
+            <figure class="scale-story-correlation" id="residual-correlation" data-scale-correlation aria-labelledby="residual-correlation-title">
+              <h3 id="residual-correlation-title"><strong>Residual fit</strong> correlates with policy success</h3>
+              <a href="assets/figures/residual-correlation-web.pdf?v=f72e3c4493ab" target="_blank" rel="noopener" aria-label="View residual modeling and policy performance as a full-resolution PDF">
+                <img data-scale-correlation-plot src="assets/figures/residual-correlation-story.svg?v=ada8fea76980" width="640" height="472" decoding="async" alt="Calibrated mean log-likelihood versus success rate for eight training objectives on RoboCasa-GR1, including MSE-Loss and HT-Loss. Spearman correlation is 0.86 and Pearson correlation is 0.83. HT-Policies achieve the highest success rate in this comparison.">
+              </a>
+            </figure>
+          </div>
+          <p class="scale-story-explanation" aria-label="Animation explained in four steps">
+            <span class="scale-story-step" data-scale-step>
+              <button class="scale-story-step-number" type="button" aria-label="Jump to step 1: residual scales across a task" disabled>1</button>
+              <span class="scale-story-step-copy">The scale of policy residuals varies across different stages of a task.</span>
+            </span>
+            <span class="scale-story-step" data-scale-step>
+              <button class="scale-story-step-number" type="button" aria-label="Jump to step 2: Gaussians with different scales" disabled>2</button>
+              <span class="scale-story-step-copy">Gaussian residuals with different scales are combined together during training.</span>
+            </span>
+            <span class="scale-story-step" data-scale-step>
+              <button class="scale-story-step-number" type="button" aria-label="Jump to step 3: mixing scales produces heavier tails" disabled>3</button>
+              <span class="scale-story-step-copy">Combining Gaussians with different scales naturally produces a heavy-tailed distribution.</span>
+            </span>
+            <span class="scale-story-step" data-scale-step>
+              <button class="scale-story-step-number" type="button" aria-label="Jump to step 4: likelihood and policy success" disabled>4</button>
+              <span class="scale-story-step-copy">Across different objectives, likelihood correlates with success rate.</span>
+            </span>
+          </p>
+        </div>
+
+      </section>
+
+      <section class="method-section" id="ht-loss" aria-labelledby="ht-loss-title">
+        <h2 id="ht-loss-title"><span class="title-term">HT-Loss</span>: Modeling the <span class="title-term">Heavy-Tailed</span> Residuals</h2>
+
+        <div class="loss-panel">
+          <a class="loss-code-link" href="https://github.com/the-labone/RegressionPolicy/tree/main/ht_loss">HT-Loss code</a>
+          <div class="loss-equation loss-equation--desktop">
+            <!-- math:ht-desktop --><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi mathvariant="normal">ℓ</mi><mrow><mi mathvariant="normal">H</mi><mi mathvariant="normal">T</mi></mrow></msub><mo stretchy="false">(</mo><mi>o</mi><mo separator="true">,</mo><mi>a</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mi>d</mi><mn>2</mn></mfrac><mi>log</mi><mo>⁡</mo><mstyle mathcolor="#2b65ad"><msubsup><mi>σ</mi><mi>θ</mi><mn>2</mn></msubsup><mo stretchy="false">(</mo><mi>o</mi><mo stretchy="false">)</mo></mstyle><mo>+</mo><mstyle mathcolor="#168452"><mfrac><mrow><mi>ν</mi><mo>+</mo><mi>d</mi></mrow><mn>2</mn></mfrac><mi>log</mi><mo>⁡</mo><mtext> ⁣</mtext><mrow><mo fence="true">(</mo><mn>1</mn><mo>+</mo><mfrac><mrow><mo stretchy="false">∥</mo><mi>r</mi><msubsup><mo stretchy="false">∥</mo><mn>2</mn><mn>2</mn></msubsup></mrow><mrow><mi>ν</mi><mtext> </mtext><mstyle mathcolor="#2b65ad"><msubsup><mi>σ</mi><mi>θ</mi><mn>2</mn></msubsup><mo stretchy="false">(</mo><mi>o</mi><mo stretchy="false">)</mo></mstyle></mrow></mfrac><mo fence="true">)</mo></mrow></mstyle></mrow><annotation encoding="application/x-tex">\ell_{\mathrm{HT}}(o,a)=\frac{d}{2}\log \textcolor{#2b65ad}{\sigma_\theta^2(o)}+\textcolor{#168452}{\frac{\nu+d}{2}\log\!\left(1+\frac{\lVert r\rVert_2^2}{\nu\,\textcolor{#2b65ad}{\sigma_\theta^2(o)}}\right)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord">ℓ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">HT</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">o</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">a</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.0574em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.0139em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord" style="color:#2b65ad;"><span class="mord mathnormal" style="margin-right:0.0359em;color:#2b65ad;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-2.453em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight" style="color:#2b65ad;"><span class="mord mathnormal mtight" style="margin-right:0.0278em;color:#2b65ad;">θ</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight" style="color:#2b65ad;"><span class="mord mtight" style="color:#2b65ad;">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mopen" style="color:#2b65ad;">(</span><span class="mord mathnormal" style="color:#2b65ad;">o</span><span class="mclose" style="color:#2b65ad;">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.4784em;vertical-align:-0.9873em;"></span><span class="mord" style="color:#168452;"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="color:#168452;"><span class="mord" style="color:#168452;">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="color:#168452;border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="color:#168452;"><span class="mord mathnormal" style="margin-right:0.0637em;color:#168452;">ν</span><span class="mspace" style="color:#168452;margin-right:0.2222em;"></span><span class="mbin" style="color:#168452;">+</span><span class="mspace" style="color:#168452;margin-right:0.2222em;"></span><span class="mord mathnormal" style="color:#168452;">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop" style="color:#168452;"><span style="color:#168452;">l</span><span style="color:#168452;">o</span><span style="margin-right:0.0139em;color:#168452;">g</span></span><span class="mspace" style="color:#168452;margin-right:-0.1667em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner" style="color:#168452;"><span class="mopen delimcenter" style="color:#168452;top:0em;"><span class="delimsizing size3" style="color:#168452;"><span style="color:#168452;">(</span></span></span><span class="mord" style="color:#168452;">1</span><span class="mspace" style="color:#168452;margin-right:0.2222em;"></span><span class="mbin" style="color:#168452;">+</span><span class="mspace" style="color:#168452;margin-right:0.2222em;"></span><span class="mord" style="color:#168452;"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4911em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="color:#168452;"><span class="mord mathnormal" style="margin-right:0.0637em;color:#168452;">ν</span><span class="mspace" style="color:#168452;margin-right:0.1667em;"></span><span class="mord" style="color:#2b65ad;"><span class="mord mathnormal" style="margin-right:0.0359em;color:#2b65ad;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7959em;"><span style="top:-2.3987em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight" style="color:#2b65ad;"><span class="mord mathnormal mtight" style="margin-right:0.0278em;color:#2b65ad;">θ</span></span></span><span style="top:-3.0448em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight" style="color:#2b65ad;"><span class="mord mtight" style="color:#2b65ad;">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3013em;"><span></span></span></span></span></span></span><span class="mopen" style="color:#2b65ad;">(</span><span class="mord mathnormal" style="color:#2b65ad;">o</span><span class="mclose" style="color:#2b65ad;">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="color:#168452;border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="color:#168452;"><span class="mopen" style="color:#168452;">∥</span><span class="mord mathnormal" style="margin-right:0.0278em;color:#168452;">r</span><span class="mclose" style="color:#168452;"><span class="mclose" style="color:#168452;">∥</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-2.4519em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight" style="color:#168452;"><span class="mord mtight" style="color:#168452;">2</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight" style="color:#168452;"><span class="mord mtight" style="color:#168452;">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2481em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9873em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="color:#168452;top:0em;"><span class="delimsizing size3" style="color:#168452;"><span style="color:#168452;">)</span></span></span></span></span></span></span></span><!-- /math:ht-desktop -->
+          </div>
+          <div class="loss-equation loss-equation--mobile">
+            <!-- math:ht-mobile --><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="center" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><msub><mi mathvariant="normal">ℓ</mi><mrow><mi mathvariant="normal">H</mi><mi mathvariant="normal">T</mi></mrow></msub><mo stretchy="false">(</mo><mi>o</mi><mo separator="true">,</mo><mi>a</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mi>d</mi><mn>2</mn></mfrac><mi>log</mi><mo>⁡</mo><mstyle mathcolor="#2b65ad"><msubsup><mi>σ</mi><mi>θ</mi><mn>2</mn></msubsup><mo stretchy="false">(</mo><mi>o</mi><mo stretchy="false">)</mo></mstyle></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mo>+</mo><mstyle mathcolor="#168452"><mfrac><mrow><mi>ν</mi><mo>+</mo><mi>d</mi></mrow><mn>2</mn></mfrac><mi>log</mi><mo>⁡</mo><mtext> ⁣</mtext><mrow><mo fence="true">(</mo><mn>1</mn><mo>+</mo><mfrac><mrow><mo stretchy="false">∥</mo><mi>r</mi><msubsup><mo stretchy="false">∥</mo><mn>2</mn><mn>2</mn></msubsup></mrow><mrow><mi>ν</mi><mtext> </mtext><mstyle mathcolor="#2b65ad"><msubsup><mi>σ</mi><mi>θ</mi><mn>2</mn></msubsup><mo stretchy="false">(</mo><mi>o</mi><mo stretchy="false">)</mo></mstyle></mrow></mfrac><mo fence="true">)</mo></mrow></mstyle></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{gathered}\ell_{\mathrm{HT}}(o,a)=\frac{d}{2}\log \textcolor{#2b65ad}{\sigma_\theta^2(o)}\\[0.5em]+\textcolor{#168452}{\frac{\nu+d}{2}\log\!\left(1+\frac{\lVert r\rVert_2^2}{\nu\,\textcolor{#2b65ad}{\sigma_\theta^2(o)}}\right)}\end{gathered}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:5.0099em;vertical-align:-2.2549em;"></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.7549em;"><span style="top:-4.8746em;"><span class="pstrut" style="height:3.4911em;"></span><span class="mord"><span class="mord"><span class="mord">ℓ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">HT</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">o</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">a</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.0139em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord" style="color:#2b65ad;"><span class="mord mathnormal" style="margin-right:0.0359em;color:#2b65ad;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-2.453em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight" style="color:#2b65ad;"><span class="mord mathnormal mtight" style="margin-right:0.0278em;color:#2b65ad;">θ</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight" style="color:#2b65ad;"><span class="mord mtight" style="color:#2b65ad;">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mopen" style="color:#2b65ad;">(</span><span class="mord mathnormal" style="color:#2b65ad;">o</span><span class="mclose" style="color:#2b65ad;">)</span></span></span><span style="top:-2.2235em;"><span class="pstrut" style="height:3.4911em;"></span><span class="mord"><span class="mord">+</span><span class="mord" style="color:#168452;"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="color:#168452;"><span class="mord" style="color:#168452;">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="color:#168452;border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="color:#168452;"><span class="mord mathnormal" style="margin-right:0.0637em;color:#168452;">ν</span><span class="mspace" style="color:#168452;margin-right:0.2222em;"></span><span class="mbin" style="color:#168452;">+</span><span class="mspace" style="color:#168452;margin-right:0.2222em;"></span><span class="mord mathnormal" style="color:#168452;">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop" style="color:#168452;"><span style="color:#168452;">l</span><span style="color:#168452;">o</span><span style="margin-right:0.0139em;color:#168452;">g</span></span><span class="mspace" style="color:#168452;margin-right:-0.1667em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner" style="color:#168452;"><span class="mopen delimcenter" style="color:#168452;top:0em;"><span class="delimsizing size3" style="color:#168452;"><span style="color:#168452;">(</span></span></span><span class="mord" style="color:#168452;">1</span><span class="mspace" style="color:#168452;margin-right:0.2222em;"></span><span class="mbin" style="color:#168452;">+</span><span class="mspace" style="color:#168452;margin-right:0.2222em;"></span><span class="mord" style="color:#168452;"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4911em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="color:#168452;"><span class="mord mathnormal" style="margin-right:0.0637em;color:#168452;">ν</span><span class="mspace" style="color:#168452;margin-right:0.1667em;"></span><span class="mord" style="color:#2b65ad;"><span class="mord mathnormal" style="margin-right:0.0359em;color:#2b65ad;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7959em;"><span style="top:-2.3987em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight" style="color:#2b65ad;"><span class="mord mathnormal mtight" style="margin-right:0.0278em;color:#2b65ad;">θ</span></span></span><span style="top:-3.0448em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight" style="color:#2b65ad;"><span class="mord mtight" style="color:#2b65ad;">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3013em;"><span></span></span></span></span></span></span><span class="mopen" style="color:#2b65ad;">(</span><span class="mord mathnormal" style="color:#2b65ad;">o</span><span class="mclose" style="color:#2b65ad;">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="color:#168452;border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="color:#168452;"><span class="mopen" style="color:#168452;">∥</span><span class="mord mathnormal" style="margin-right:0.0278em;color:#168452;">r</span><span class="mclose" style="color:#168452;"><span class="mclose" style="color:#168452;">∥</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-2.4519em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight" style="color:#168452;"><span class="mord mtight" style="color:#168452;">2</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight" style="color:#168452;"><span class="mord mtight" style="color:#168452;">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2481em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9873em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="color:#168452;top:0em;"><span class="delimsizing size3" style="color:#168452;"><span style="color:#168452;">)</span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.2549em;"><span></span></span></span></span></span></span></span></span></span></span></span><!-- /math:ht-mobile -->
+          </div>
+          <div class="loss-notation">
+            <span><!-- math:residual --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><msub><mi>f</mi><mi>θ</mi></msub><mo stretchy="false">(</mo><mi>o</mi><mo stretchy="false">)</mo><mo>−</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">r=f_\theta(o)-a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">r</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0278em;">θ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">o</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.4306em;"></span><span class="mord mathnormal">a</span></span></span></span><!-- /math:residual --></span>
+            <span><!-- math:dimension --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span><!-- /math:dimension -->: action-chunk dimension</span>
+            <span><!-- math:nu --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ν</mi></mrow><annotation encoding="application/x-tex">\nu</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0637em;">ν</span></span></span></span><!-- /math:nu -->: degrees of freedom</span>
+          </div>
+          <div class="loss-notes">
+            <div class="loss-note loss-note--scale">
+              <h3>Input-dependent scales</h3>
+              <p>The model learns a residual scale for each observation.</p>
+            </div>
+            <div class="loss-note loss-note--tails">
+              <h3>Robust to heavy tails</h3>
+              <p>The gradient weight decreases as the standardized residual grows.</p>
+            </div>
+          </div>
+        </div>
+        <!-- <p class="method-description">HT-Policies model input-dependent scales and heavy-tailed residuals, and predict action chunks in a single feed-forward pass.</p> -->
+      </section>
+
+      <section class="performance-section" id="performance" aria-labelledby="performance-title">
+        <h2 id="performance-title"><span class="title-term">HT-Policies</span>: Performance and Efficiency Across Tasks</h2>
+        <div class="performance-benchmark-block">
+          <div class="performance-heading">
+            <h3 class="performance-subtitle" id="benchmark-title">Benchmark performance</h3>
+            <div class="performance-legend" aria-label="Policy comparison legend">
+              <span class="performance-key performance-key--mse">MSE-Policy</span>
+              <span class="performance-key performance-key--flow">Flow-Policy / DP</span>
+              <span class="performance-key performance-key--ht">HT-Policy (ours)</span>
+            </div>
+          </div>
+          <figure class="performance-figure" aria-labelledby="benchmark-title">
+            <a class="performance-chart" href="assets/figures/performance.svg?v=22b783c4c9ec" target="_blank" rel="noopener" aria-label="View the full-size performance comparison chart">
+              <picture>
+                <source media="(max-width: 700px)" srcset="assets/figures/performance-mobile-inline.svg?v=72bafa566aba" width="620" height="1160">
+                <source media="(max-width: 900px)" srcset="assets/figures/performance-tablet-inline.svg?v=20b932a5cb2d" width="960" height="740">
+                <img src="assets/figures/performance-inline.svg?v=538547146985" width="1260" height="410" loading="lazy" decoding="async" alt="Success rates for MSE-Policies, Flow-Policies or Diffusion Policy, and HT-Policies. Simulation compares GR00T N1.7 on RoboCasa-GR1 and SimplerEnv, pi0.5 on LIBERO, Cosmos 3 on LIBERO-10, and policies trained from scratch on RoboMimic. Real-world tasks are Push-T, Peel-Note, and Insert-T. Every bar is labeled with its success rate.">
+              </picture>
+            </a>
+          </figure>
+        </div>
+
+        <div class="efficiency-block" id="efficiency">
+          <div class="efficiency-heading">
+            <div class="efficiency-heading-copy">
+              <h3 class="performance-subtitle" id="efficiency-title">Inference efficiency</h3>
+              <p class="efficiency-setup">NVIDIA RTX 5090 · batch size 1</p>
+            </div>
+          </div>
+          <figure class="performance-figure efficiency-figure" aria-labelledby="efficiency-title" data-efficiency-figure>
+            <a class="performance-chart" href="assets/figures/efficiency.svg?v=6dda6006f367" target="_blank" rel="noopener" aria-label="View the full-size inference efficiency comparison">
+              <picture>
+                <source media="(max-width: 700px)" srcset="assets/figures/efficiency-mobile.svg?v=f0c573b02d59" width="480" height="640">
+                <img src="assets/figures/efficiency.svg?v=6dda6006f367" width="1260" height="450" loading="lazy" decoding="async" alt="Whole-model latency per action chunk on NVIDIA RTX 5090, batch size 1. Flow-Policy versus HT-Policy: GR00T N1.7, 46.20 versus 24.52 ms (1.88 times faster); pi0.5, 123.58 versus 67.94 ms (1.82 times faster); Cosmos3-Nano, 1271.76 versus 71.34 ms (17.83 times faster). For each model, Flow-Policy is normalized to 100%; lower is better. Timings include observation encoding and action prediction from preprocessed GPU inputs.">
+              </picture>
+            </a>
+          </figure>
+        </div>
+
+        <div class="performance-demo-block">
+          <h3 class="performance-subtitle" id="demos-title">Real world and simulation demos</h3>
+          <div class="demo-grid performance-demos" id="demos" tabindex="0" aria-labelledby="demos-title">
+            <figure class="demo" aria-labelledby="peel-note-title">
+              <video src="assets/videos/real-paper-pickup.mp4" poster="assets/videos/real-paper-pickup.jpg" width="960" height="720" muted loop playsinline preload="none" aria-label="Real-robot Peel Note demonstration">
+                <a href="assets/videos/real-paper-pickup.mp4">Watch Peel Note</a>
+              </video>
+              <figcaption>
+                <div class="demo-caption-heading">
+                  <h4 id="peel-note-title">Peel Note</h4>
+                  <p class="demo-meta">Real World</p>
+                </div>
+                <div class="demo-performance" role="group" aria-label="Success rate: HT-Policy 52%; Flow-Policy 56%; difference −4 percentage points. Real world · U-Net · 50 rollouts per task." title="Real world · U-Net · 50 rollouts per task. Success rate: HT-Policy 52%, Flow-Policy 56%. Difference in percentage points.">
+                  <p class="demo-stat">
+                    <span class="demo-stat-label">HT-Policy</span>
+                    <strong class="demo-success">52<span>%</span></strong>
+                  </p>
+                  <p class="demo-stat">
+                    <span class="demo-stat-label">vs Flow-Policy</span>
+                    <strong class="demo-delta demo-delta--negative">−4<span> pp</span></strong>
+                  </p>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="demo" aria-labelledby="push-t-title">
+              <video src="assets/videos/real-push-t.mp4" poster="assets/videos/real-push-t.jpg" width="960" height="720" muted loop playsinline preload="none" aria-label="Real-robot Push T demonstration">
+                <a href="assets/videos/real-push-t.mp4">Watch Push T</a>
+              </video>
+              <figcaption>
+                <div class="demo-caption-heading">
+                  <h4 id="push-t-title">Push T</h4>
+                  <p class="demo-meta">Real World</p>
+                </div>
+                <div class="demo-performance" role="group" aria-label="Success rate: HT-Policy 88%; Flow-Policy 86%; difference +2 percentage points. Real world · U-Net · 50 rollouts per task." title="Real world · U-Net · 50 rollouts per task. Success rate: HT-Policy 88%, Flow-Policy 86%. Difference in percentage points.">
+                  <p class="demo-stat">
+                    <span class="demo-stat-label">HT-Policy</span>
+                    <strong class="demo-success">88<span>%</span></strong>
+                  </p>
+                  <p class="demo-stat">
+                    <span class="demo-stat-label">vs Flow-Policy</span>
+                    <strong class="demo-delta demo-delta--positive">+2<span> pp</span></strong>
+                  </p>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="demo" aria-labelledby="store-bottle-title">
+              <video src="assets/videos/robocasa-gr1-ht.mp4" poster="assets/videos/robocasa-gr1-ht.jpg" width="960" height="720" muted loop playsinline preload="none" aria-label="Store Bottle simulation demonstration in RoboCasa-GR1">
+                <a href="assets/videos/robocasa-gr1-ht.mp4">Watch Store Bottle</a>
+              </video>
+              <figcaption>
+                <div class="demo-caption-heading">
+                  <h4 id="store-bottle-title">Store Bottle</h4>
+                  <p class="demo-meta">Simulation</p>
+                </div>
+                <div class="demo-performance" role="group" aria-label="Success rate: HT-Policy 58.26%; Flow-Policy 42%; difference +16.26 percentage points. PnPBottleToCabinetClose · GR00T N1.7 · mean over 10 evaluation seeds · matching in-house Flow evaluation." title="PnPBottleToCabinetClose · GR00T N1.7 · mean over 10 evaluation seeds · matching in-house Flow evaluation. Success rate: HT-Policy 58.26%, Flow-Policy 42%. Difference in percentage points.">
+                  <p class="demo-stat">
+                    <span class="demo-stat-label">HT-Policy</span>
+                    <strong class="demo-success">58.3<span>%</span></strong>
+                  </p>
+                  <p class="demo-stat">
+                    <span class="demo-stat-label">vs Flow-Policy</span>
+                    <strong class="demo-delta demo-delta--positive">+16.3<span> pp</span></strong>
+                  </p>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="demo" aria-labelledby="tool-hang-title">
+              <video src="assets/videos/tool-hang-ht.mp4" poster="assets/videos/tool-hang-ht.jpg" width="960" height="720" muted loop playsinline preload="none" aria-label="Tool Hang simulation demonstration">
+                <a href="assets/videos/tool-hang-ht.mp4">Watch Tool Hang</a>
+              </video>
+              <figcaption>
+                <div class="demo-caption-heading">
+                  <h4 id="tool-hang-title">Tool Hang</h4>
+                  <p class="demo-meta">Simulation</p>
+                </div>
+                <div class="demo-performance" role="group" aria-label="Success rate: HT-Policy 97%; DP 100%; difference −3 percentage points. Tool-Hang PH · state observations · Transformer · best checkpoint scores averaged over 3 training seeds." title="Tool-Hang PH · state observations · Transformer · best checkpoint scores averaged over 3 training seeds. Success rate: HT-Policy 97%, DP 100%. Difference in percentage points.">
+                  <p class="demo-stat">
+                    <span class="demo-stat-label">HT-Policy</span>
+                    <strong class="demo-success">97<span>%</span></strong>
+                  </p>
+                  <p class="demo-stat">
+                    <span class="demo-stat-label">vs DP</span>
+                    <strong class="demo-delta demo-delta--negative">−3<span> pp</span></strong>
+                  </p>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="analysis-section gradient-section" id="gradient-perspective" aria-labelledby="gradient-title">
+        <h2 id="gradient-title">Understanding <span class="title-term">HT-Policies</span> Through Gradients</h2>
+
+        <div class="gradient-block">
+          <figure class="analysis-figure gradient-figure" aria-labelledby="gradient-allocation-title">
+            <h3 class="analysis-figure-title" id="gradient-allocation-title">Similar residual tails, different gradient allocation</h3>
+            <a href="assets/figures/residual-gradients.pdf" target="_blank" rel="noopener" aria-label="View action residuals and gradient allocation as a full-resolution PDF">
+              <picture>
+                <source media="(max-width: 480px)" srcset="assets/figures/residual-gradients-web-mobile.svg?v=89d4d6cced1d" width="600" height="754">
+                <source media="(max-width: 900px)" srcset="assets/figures/residual-gradients-web-tablet.svg?v=4c5cf917ded1" width="800" height="620">
+                <img src="assets/figures/residual-gradients-web.svg?v=cdaf51937f8a" width="1040" height="300" loading="lazy" decoding="async" alt="RoboCasa-GR1 and Tool-Hang comparisons: MSE-Policies and Flow-Policies exhibit heavy-tailed action residuals. Gradient contributions concentrate on high-residual observations under MSE-Loss and high-noise flow matching, while low-noise Flow-Policy gradients are more evenly distributed.">
+              </picture>
+            </a>
+          </figure>
+          <p class="analysis-summary gradient-summary">For MSE-Policies, large-residual observations dominate gradient allocation. Flow-Policies exhibit similarly heavy-tailed action residuals, but distribute gradients more evenly in the low-noise regime (<i>t</i> &gt; 0.5).</p>
+        </div>
+
+        <div class="gradient-block">
+          <figure class="analysis-figure gradient-figure" aria-labelledby="gradient-performance-title">
+            <h3 class="analysis-figure-title" id="gradient-performance-title">More balanced gradients, higher policy success</h3>
+            <a href="assets/figures/gradient-performance.pdf" target="_blank" rel="noopener" aria-label="View policy success rates and gradient balance as a full-resolution PDF">
+              <picture>
+                <source media="(max-width: 480px)" srcset="assets/figures/gradient-performance-web-mobile.svg?v=bc4e7649b786" width="560" height="764">
+                <source media="(max-width: 900px)" srcset="assets/figures/gradient-performance-web-tablet.svg?v=6f4b189039c9" width="800" height="700">
+                <img src="assets/figures/gradient-performance-web.svg?v=2f20165539cc" width="1040" height="350" loading="lazy" decoding="async" alt="Success rates above and gradient shares by action-residual decile below for RoboCasa-GR1, Bridge, Fractal, and Tool-Hang. HT-Policies improve success rates over MSE-Policies in all four settings and exhibit more balanced gradient allocation, resembling low-noise Flow-Policies.">
+              </picture>
+            </a>
+          </figure>
+          <p class="analysis-summary gradient-summary">Across four settings, HT-Policies improve success rates over MSE-Policies (top). With HT-Loss, large-residual observations no longer dominate gradient allocation (bottom); the resulting distribution resembles that of low-noise Flow-Policies (<i>t</i> &gt; 0.5).</p>
+        </div>
+      </section>
+      <section class="citation-section" id="citation" aria-labelledby="citation-title">
+        <h2 id="citation-title">Citation</h2>
+        <div class="citation-block">
+          <div class="citation-toolbar">
+            <span>BibTeX</span>
+            <button class="citation-copy" type="button" hidden>
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M13 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/></svg>
+              <span>Copy BibTeX</span>
+            </button>
+          </div>
+          <pre tabindex="0" aria-label="BibTeX citation"><code id="bibtex-citation">@misc{zhou2026residualmodelingclosesregression,
+  title={Residual Modeling Closes the Regression and Generative Policy Gap in Robot Learning},
+  author={Yuchen Zhou and Jiacheng You and Weikang Wan and Weijun Dong and Yang Gao and Jiayuan Mao},
+  year={2026},
+  eprint={2610.12231},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO},
+  url={https://arxiv.org/abs/2610.12231},
+}</code></pre>
+          <p class="citation-status" role="status"></p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

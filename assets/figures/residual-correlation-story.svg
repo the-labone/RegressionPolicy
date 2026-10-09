@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 472" width="640" height="472" role="img" aria-labelledby="correlation-story-description" font-family="Source Sans Pro, Arial, sans-serif">
+  <title id="correlation-story-description">Residual fit correlates with policy success</title>
+  <desc>Eight training objectives on RoboCasa-GR1. Marker positions and horizontal confidence intervals are reproduced from the paper figure. Spearman correlation is 0.86 and Pearson correlation is 0.83. The dashed line is a linear fit across the eight objectives.</desc>
+  <metadata>Source: residual-correlation-web.svg; extracted by scripts/render_correlation_story.py. X: calibrated mean joint log-likelihood per action dimension (nat/dim). Intervals: 2000 task-stratified episode bootstrap samples with fitted scale fixed. SVG coordinate precision only.</metadata>
+  <defs>
+    <clipPath id="correlation-story-trend-reveal" clipPathUnits="userSpaceOnUse">
+      <rect x="133.7275" y="0" width="389.6426" height="472" data-correlation-trend-clip="true" data-full-width="389.6426" />
+    </clipPath>
+  </defs>
+  <text x="70" y="25" fill="#72766f" font-size="18">RoboCasa-GR1 · calibrated scale</text>
+  <text x="602" y="25" text-anchor="end" fill="#72766f" font-size="18">ρ = 0.86     r = 0.83</text>
+  <line x1="70" x2="602" y1="392.891" y2="392.891" stroke="#e4e7e4" stroke-width="1.2" />
+  <text x="55" y="398.891" text-anchor="end" fill="#72766f" font-size="19">35</text>
+  <line x1="70" x2="602" y1="321.8009" y2="321.8009" stroke="#e4e7e4" stroke-width="1.2" />
+  <text x="55" y="327.8009" text-anchor="end" fill="#72766f" font-size="19">40</text>
+  <line x1="70" x2="602" y1="250.7109" y2="250.7109" stroke="#e4e7e4" stroke-width="1.2" />
+  <text x="55" y="256.7109" text-anchor="end" fill="#72766f" font-size="19">45</text>
+  <line x1="70" x2="602" y1="179.6209" y2="179.6209" stroke="#e4e7e4" stroke-width="1.2" />
+  <text x="55" y="185.6209" text-anchor="end" fill="#72766f" font-size="19">50</text>
+  <line x1="70" x2="602" y1="108.5308" y2="108.5308" stroke="#e4e7e4" stroke-width="1.2" />
+  <text x="55" y="114.5308" text-anchor="end" fill="#72766f" font-size="19">55</text>
+  <text x="128.1875" y="429" text-anchor="middle" fill="#72766f" font-size="19">1.00</text>
+  <text x="232.0938" y="429" text-anchor="middle" fill="#72766f" font-size="19">1.25</text>
+  <text x="336" y="429" text-anchor="middle" fill="#72766f" font-size="19">1.50</text>
+  <text x="439.9062" y="429" text-anchor="middle" fill="#72766f" font-size="19">1.75</text>
+  <text x="543.8125" y="429" text-anchor="middle" fill="#72766f" font-size="19">2.00</text>
+  <text x="70" y="75" fill="#72766f" font-size="20">Success rate (%)</text>
+  <text x="336" y="465" text-anchor="middle" fill="#72766f" font-size="20">Mean log-likelihood</text>
+  <g clip-path="url(#correlation-story-trend-reveal)">
+    <path d="M 138.7275 358.7595 L 518.3702 194.8399" fill="none" stroke="#2b679a" stroke-width="3.5" stroke-dasharray="9 7" stroke-linecap="round" stroke-opacity="0.6" data-correlation-trend="true" />
+  </g>
+  <g data-objective="MSE-Loss">
+    <title>MSE-Loss: likelihood ≈1.025; success ≈37.80%</title>
+    <path d="M 132.1802 353.1134 H 144.9536" fill="none" stroke="#72766f" stroke-width="1.4" stroke-opacity="0.6" stroke-linecap="round" />
+    <circle cx="138.7275" cy="353.1134" r="5" fill="#72766f" stroke="#fdfdfa" stroke-width="1.6" paint-order="stroke fill" shape-rendering="geometricPrecision" />
+    <text x="150.7275" y="382.1134" text-anchor="start" fill="#72766f" font-size="19" font-weight="400">MSE-Loss</text>
+  </g>
+  <g data-objective="RMSE">
+    <title>RMSE: likelihood ≈1.383; success ≈46.00%</title>
+    <path d="M 280.7531 236.4607 H 293.9442" fill="none" stroke="#2b679a" stroke-width="1.4" stroke-opacity="0.6" stroke-linecap="round" />
+    <circle cx="287.4611" cy="236.4607" r="5" fill="#2b679a" stroke="#fdfdfa" stroke-width="1.6" paint-order="stroke fill" shape-rendering="geometricPrecision" />
+    <text x="275.4611" y="220.4607" text-anchor="end" fill="#303633" font-size="19" font-weight="400">RMSE</text>
+  </g>
+  <g data-objective="Huber">
+    <title>Huber: likelihood ≈1.261; success ≈38.10%</title>
+    <path d="M 231.1297 348.8293 H 242.3285" fill="none" stroke="#b88c5e" stroke-width="1.4" stroke-opacity="0.6" stroke-linecap="round" />
+    <circle cx="236.8336" cy="348.8293" r="5" fill="#b88c5e" stroke="#fdfdfa" stroke-width="1.6" paint-order="stroke fill" shape-rendering="geometricPrecision" />
+    <text x="248.8336" y="379.8293" text-anchor="start" fill="#303633" font-size="19" font-weight="400">Huber</text>
+  </g>
+  <g data-objective="Hetero-Huber">
+    <title>Hetero-Huber: likelihood ≈1.622; success ≈40.68%</title>
+    <path d="M 381.2451 312.1582 H 392.219" fill="none" stroke="#b88c5e" stroke-width="1.4" stroke-opacity="0.6" stroke-linecap="round" />
+    <circle cx="386.716" cy="312.1582" r="5" fill="#b88c5e" stroke="#fdfdfa" stroke-width="1.6" paint-order="stroke fill" shape-rendering="geometricPrecision" />
+    <text x="399.716" y="335.1582" text-anchor="start" fill="#303633" font-size="19" font-weight="400">Hetero-Huber</text>
+  </g>
+  <g data-objective="Hetero-RMSE">
+    <title>Hetero-RMSE: likelihood ≈1.939; success ≈47.67%</title>
+    <path d="M 512.7065 212.6996 H 524.2186" fill="none" stroke="#2b679a" stroke-width="1.4" stroke-opacity="0.6" stroke-linecap="round" />
+    <circle cx="518.3702" cy="212.6996" r="5" fill="#2b679a" stroke="#fdfdfa" stroke-width="1.6" paint-order="stroke fill" shape-rendering="geometricPrecision" />
+    <text x="507.3702" y="193.6996" text-anchor="end" fill="#303633" font-size="19" font-weight="400">Hetero-RMSE</text>
+  </g>
+  <g data-objective="HG">
+    <title>HG: likelihood ≈1.468; success ≈42.53%</title>
+    <path d="M 316.9524 285.8324 H 328.111" fill="none" stroke="#2b679a" stroke-width="1.4" stroke-opacity="0.6" stroke-linecap="round" />
+    <circle cx="322.6241" cy="285.8324" r="5" fill="#2b679a" stroke="#fdfdfa" stroke-width="1.6" paint-order="stroke fill" shape-rendering="geometricPrecision" />
+    <text x="335.6241" y="293.8324" text-anchor="start" fill="#303633" font-size="19" font-weight="400">HG</text>
+  </g>
+  <g data-objective="Student-t">
+    <title>Student-t: likelihood ≈1.168; success ≈39.49%</title>
+    <path d="M 192.0624 328.9983 H 203.6951" fill="none" stroke="#b88c5e" stroke-width="1.4" stroke-opacity="0.6" stroke-linecap="round" />
+    <circle cx="197.9591" cy="328.9983" r="5" fill="#b88c5e" stroke="#fdfdfa" stroke-width="1.6" paint-order="stroke fill" shape-rendering="geometricPrecision" />
+    <text x="186.9591" y="313.9983" text-anchor="end" fill="#303633" font-size="19" font-weight="400">Student-t</text>
+  </g>
+  <g data-objective="HT-Loss">
+    <title>HT-Loss: likelihood ≈1.867; success ≈51.50%</title>
+    <path d="M 483.0224 158.3215 H 494.5426" fill="none" stroke="#479b82" stroke-width="1.4" stroke-opacity="0.6" stroke-linecap="round" />
+    <circle cx="488.7102" cy="158.3215" r="10" fill="#479b82" fill-opacity="0.08" />
+    <circle cx="488.7102" cy="158.3215" r="5" fill="#479b82" stroke="#fdfdfa" stroke-width="1.6" paint-order="stroke fill" shape-rendering="geometricPrecision" />
+    <text x="501.7102" y="142.3215" text-anchor="start" fill="#16846b" font-size="19" font-weight="600">HT-Loss</text>
+  </g>
+</svg>

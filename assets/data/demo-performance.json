@@ -1,0 +1,47 @@
+{
+  "metric": "Success rate (%)",
+  "difference": "HT minus matching generative baseline, in percentage points",
+  "paper": "https://arxiv.org/abs/2610.12231",
+  "tasks": [
+    {
+      "id": "peel-note-title",
+      "task": "Peel Note",
+      "ht": 52,
+      "baseline": 56,
+      "baseline_label": "Flow-Policy",
+      "delta": -4,
+      "setup": "Real world \u00b7 U-Net \u00b7 50 rollouts per task",
+      "source": "tables/exp_real_robot.tex"
+    },
+    {
+      "id": "push-t-title",
+      "task": "Push T",
+      "ht": 88,
+      "baseline": 86,
+      "baseline_label": "Flow-Policy",
+      "delta": 2,
+      "setup": "Real world \u00b7 U-Net \u00b7 50 rollouts per task",
+      "source": "tables/exp_real_robot.tex"
+    },
+    {
+      "id": "store-bottle-title",
+      "task": "Store Bottle",
+      "ht": 58.26,
+      "baseline": 42.0,
+      "baseline_label": "Flow-Policy",
+      "delta": 16.26,
+      "setup": "PnPBottleToCabinetClose \u00b7 GR00T N1.7 \u00b7 mean over 10 evaluation seeds \u00b7 matching in-house Flow evaluation",
+      "source": "tables/exp_gr1_task_results.tex"
+    },
+    {
+      "id": "tool-hang-title",
+      "task": "Tool Hang",
+      "ht": 97,
+      "baseline": 100,
+      "baseline_label": "DP",
+      "delta": -3,
+      "setup": "Tool-Hang PH \u00b7 state observations \u00b7 Transformer \u00b7 best checkpoint scores averaged over 3 training seeds",
+      "source": "tables/exp_dp_comparison_state.tex"
+    }
+  ]
+}

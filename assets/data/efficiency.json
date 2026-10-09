@@ -1,0 +1,24 @@
+{
+  "metric": "Whole-model inference latency",
+  "unit": "ms",
+  "hardware": "NVIDIA RTX 5090",
+  "batch_size": 1,
+  "precision": "BF16",
+  "protocol": "One policy query produces an action chunk. Includes observation encoding and action prediction from preprocessed GPU inputs; excludes input/output processing, environment execution, and video decoding. No gradient computation or compilation.",
+  "source": "tables/exp_inference.tex, Total latency row; sections/appendix_efficiency.tex",
+  "plot_normalization": "Each model's Flow-Policy latency is 100%. Endpoint labels show measured milliseconds; speedup is Flow-Policy latency divided by HT-Policy latency.",
+  "models": [
+    {
+      "name": "GR00T N1.7",
+      "latency_ms": {"Flow": "46.20", "HT": "24.52"}
+    },
+    {
+      "name": "π₀.₅",
+      "latency_ms": {"Flow": "123.58", "HT": "67.94"}
+    },
+    {
+      "name": "Cosmos3-Nano",
+      "latency_ms": {"Flow": "1271.76", "HT": "71.34"}
+    }
+  ]
+}

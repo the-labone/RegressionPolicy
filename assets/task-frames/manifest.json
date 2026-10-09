@@ -1,0 +1,491 @@
+{
+  "version": 1,
+  "tasks": [
+    {
+      "id": "close_drawer",
+      "label": "Close Drawer",
+      "sprite": "assets/task-frames/close_drawer.webp",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frameCount": 21,
+      "columns": 7,
+      "rows": 3,
+      "durationSeconds": 6.8,
+      "sourceFrameCount": 34,
+      "sourceFps": 5.0,
+      "frames": [
+        {
+          "index": 0,
+          "progress": 0.0,
+          "timeSeconds": 0.0,
+          "column": 0,
+          "row": 0
+        },
+        {
+          "index": 1,
+          "progress": 0.05,
+          "timeSeconds": 0.4,
+          "column": 1,
+          "row": 0
+        },
+        {
+          "index": 2,
+          "progress": 0.1,
+          "timeSeconds": 0.6,
+          "column": 2,
+          "row": 0
+        },
+        {
+          "index": 3,
+          "progress": 0.15,
+          "timeSeconds": 1.0,
+          "column": 3,
+          "row": 0
+        },
+        {
+          "index": 4,
+          "progress": 0.2,
+          "timeSeconds": 1.4,
+          "column": 4,
+          "row": 0
+        },
+        {
+          "index": 5,
+          "progress": 0.25,
+          "timeSeconds": 1.6,
+          "column": 5,
+          "row": 0
+        },
+        {
+          "index": 6,
+          "progress": 0.3,
+          "timeSeconds": 2.0,
+          "column": 6,
+          "row": 0
+        },
+        {
+          "index": 7,
+          "progress": 0.35,
+          "timeSeconds": 2.4,
+          "column": 0,
+          "row": 1
+        },
+        {
+          "index": 8,
+          "progress": 0.4,
+          "timeSeconds": 2.6,
+          "column": 1,
+          "row": 1
+        },
+        {
+          "index": 9,
+          "progress": 0.45,
+          "timeSeconds": 3.0,
+          "column": 2,
+          "row": 1
+        },
+        {
+          "index": 10,
+          "progress": 0.5,
+          "timeSeconds": 3.2,
+          "column": 3,
+          "row": 1
+        },
+        {
+          "index": 11,
+          "progress": 0.55,
+          "timeSeconds": 3.6,
+          "column": 4,
+          "row": 1
+        },
+        {
+          "index": 12,
+          "progress": 0.6,
+          "timeSeconds": 4.0,
+          "column": 5,
+          "row": 1
+        },
+        {
+          "index": 13,
+          "progress": 0.65,
+          "timeSeconds": 4.2,
+          "column": 6,
+          "row": 1
+        },
+        {
+          "index": 14,
+          "progress": 0.7,
+          "timeSeconds": 4.6,
+          "column": 0,
+          "row": 2
+        },
+        {
+          "index": 15,
+          "progress": 0.75,
+          "timeSeconds": 5.0,
+          "column": 1,
+          "row": 2
+        },
+        {
+          "index": 16,
+          "progress": 0.8,
+          "timeSeconds": 5.2,
+          "column": 2,
+          "row": 2
+        },
+        {
+          "index": 17,
+          "progress": 0.85,
+          "timeSeconds": 5.6,
+          "column": 3,
+          "row": 2
+        },
+        {
+          "index": 18,
+          "progress": 0.9,
+          "timeSeconds": 6.0,
+          "column": 4,
+          "row": 2
+        },
+        {
+          "index": 19,
+          "progress": 0.95,
+          "timeSeconds": 6.2,
+          "column": 5,
+          "row": 2
+        },
+        {
+          "index": 20,
+          "progress": 1.0,
+          "timeSeconds": 6.6,
+          "column": 6,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "id": "open_drawer",
+      "label": "Open Drawer",
+      "sprite": "assets/task-frames/open_drawer.webp",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frameCount": 21,
+      "columns": 7,
+      "rows": 3,
+      "durationSeconds": 9.0,
+      "sourceFrameCount": 45,
+      "sourceFps": 5.0,
+      "frames": [
+        {
+          "index": 0,
+          "progress": 0.0,
+          "timeSeconds": 0.0,
+          "column": 0,
+          "row": 0
+        },
+        {
+          "index": 1,
+          "progress": 0.05,
+          "timeSeconds": 0.4,
+          "column": 1,
+          "row": 0
+        },
+        {
+          "index": 2,
+          "progress": 0.1,
+          "timeSeconds": 0.8,
+          "column": 2,
+          "row": 0
+        },
+        {
+          "index": 3,
+          "progress": 0.15,
+          "timeSeconds": 1.4,
+          "column": 3,
+          "row": 0
+        },
+        {
+          "index": 4,
+          "progress": 0.2,
+          "timeSeconds": 1.8,
+          "column": 4,
+          "row": 0
+        },
+        {
+          "index": 5,
+          "progress": 0.25,
+          "timeSeconds": 2.2,
+          "column": 5,
+          "row": 0
+        },
+        {
+          "index": 6,
+          "progress": 0.3,
+          "timeSeconds": 2.6,
+          "column": 6,
+          "row": 0
+        },
+        {
+          "index": 7,
+          "progress": 0.35,
+          "timeSeconds": 3.0,
+          "column": 0,
+          "row": 1
+        },
+        {
+          "index": 8,
+          "progress": 0.4,
+          "timeSeconds": 3.6,
+          "column": 1,
+          "row": 1
+        },
+        {
+          "index": 9,
+          "progress": 0.45,
+          "timeSeconds": 4.0,
+          "column": 2,
+          "row": 1
+        },
+        {
+          "index": 10,
+          "progress": 0.5,
+          "timeSeconds": 4.4,
+          "column": 3,
+          "row": 1
+        },
+        {
+          "index": 11,
+          "progress": 0.55,
+          "timeSeconds": 4.8,
+          "column": 4,
+          "row": 1
+        },
+        {
+          "index": 12,
+          "progress": 0.6,
+          "timeSeconds": 5.2,
+          "column": 5,
+          "row": 1
+        },
+        {
+          "index": 13,
+          "progress": 0.65,
+          "timeSeconds": 5.8,
+          "column": 6,
+          "row": 1
+        },
+        {
+          "index": 14,
+          "progress": 0.7,
+          "timeSeconds": 6.2,
+          "column": 0,
+          "row": 2
+        },
+        {
+          "index": 15,
+          "progress": 0.75,
+          "timeSeconds": 6.6,
+          "column": 1,
+          "row": 2
+        },
+        {
+          "index": 16,
+          "progress": 0.8,
+          "timeSeconds": 7.0,
+          "column": 2,
+          "row": 2
+        },
+        {
+          "index": 17,
+          "progress": 0.85,
+          "timeSeconds": 7.4,
+          "column": 3,
+          "row": 2
+        },
+        {
+          "index": 18,
+          "progress": 0.9,
+          "timeSeconds": 8.0,
+          "column": 4,
+          "row": 2
+        },
+        {
+          "index": 19,
+          "progress": 0.95,
+          "timeSeconds": 8.4,
+          "column": 5,
+          "row": 2
+        },
+        {
+          "index": 20,
+          "progress": 1.0,
+          "timeSeconds": 8.8,
+          "column": 6,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "id": "sweep_into_pile",
+      "label": "Sweep into Pile",
+      "sprite": "assets/task-frames/sweep_into_pile.webp",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frameCount": 21,
+      "columns": 7,
+      "rows": 3,
+      "durationSeconds": 19.2,
+      "sourceFrameCount": 96,
+      "sourceFps": 5.0,
+      "frames": [
+        {
+          "index": 0,
+          "progress": 0.0,
+          "timeSeconds": 0.0,
+          "column": 0,
+          "row": 0
+        },
+        {
+          "index": 1,
+          "progress": 0.05,
+          "timeSeconds": 1.0,
+          "column": 1,
+          "row": 0
+        },
+        {
+          "index": 2,
+          "progress": 0.1,
+          "timeSeconds": 2.0,
+          "column": 2,
+          "row": 0
+        },
+        {
+          "index": 3,
+          "progress": 0.15,
+          "timeSeconds": 2.8,
+          "column": 3,
+          "row": 0
+        },
+        {
+          "index": 4,
+          "progress": 0.2,
+          "timeSeconds": 3.8,
+          "column": 4,
+          "row": 0
+        },
+        {
+          "index": 5,
+          "progress": 0.25,
+          "timeSeconds": 4.8,
+          "column": 5,
+          "row": 0
+        },
+        {
+          "index": 6,
+          "progress": 0.3,
+          "timeSeconds": 5.6,
+          "column": 6,
+          "row": 0
+        },
+        {
+          "index": 7,
+          "progress": 0.35,
+          "timeSeconds": 6.6,
+          "column": 0,
+          "row": 1
+        },
+        {
+          "index": 8,
+          "progress": 0.4,
+          "timeSeconds": 7.6,
+          "column": 1,
+          "row": 1
+        },
+        {
+          "index": 9,
+          "progress": 0.45,
+          "timeSeconds": 8.6,
+          "column": 2,
+          "row": 1
+        },
+        {
+          "index": 10,
+          "progress": 0.5,
+          "timeSeconds": 9.6,
+          "column": 3,
+          "row": 1
+        },
+        {
+          "index": 11,
+          "progress": 0.55,
+          "timeSeconds": 10.4,
+          "column": 4,
+          "row": 1
+        },
+        {
+          "index": 12,
+          "progress": 0.6,
+          "timeSeconds": 11.4,
+          "column": 5,
+          "row": 1
+        },
+        {
+          "index": 13,
+          "progress": 0.65,
+          "timeSeconds": 12.4,
+          "column": 6,
+          "row": 1
+        },
+        {
+          "index": 14,
+          "progress": 0.7,
+          "timeSeconds": 13.2,
+          "column": 0,
+          "row": 2
+        },
+        {
+          "index": 15,
+          "progress": 0.75,
+          "timeSeconds": 14.2,
+          "column": 1,
+          "row": 2
+        },
+        {
+          "index": 16,
+          "progress": 0.8,
+          "timeSeconds": 15.2,
+          "column": 2,
+          "row": 2
+        },
+        {
+          "index": 17,
+          "progress": 0.85,
+          "timeSeconds": 16.2,
+          "column": 3,
+          "row": 2
+        },
+        {
+          "index": 18,
+          "progress": 0.9,
+          "timeSeconds": 17.2,
+          "column": 4,
+          "row": 2
+        },
+        {
+          "index": 19,
+          "progress": 0.95,
+          "timeSeconds": 18.0,
+          "column": 5,
+          "row": 2
+        },
+        {
+          "index": 20,
+          "progress": 1.0,
+          "timeSeconds": 19.0,
+          "column": 6,
+          "row": 2
+        }
+      ]
+    }
+  ]
+}

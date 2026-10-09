@@ -1,0 +1,42 @@
+Generated with the built-in image_gen tool.
+Source image: assets/project-icon.png
+Output image: assets/project-icon-gripper.png
+Transparent background: true
+
+Use case: precise-object-edit.
+Make one small local edit to the attached original distribution-curve icon.
+On the LEFT ASCENDING slope, around 30% of canvas width and 49% of canvas height, replace a SHORT section of the blue curve with ONE small robotic two-finger gripper. The gripper opens upward, following the upward direction of this slope. Draw it simply with two opposing angular fingers, a little inward bend at each fingertip, and a short shared base. Use the existing warm clay-orange color from the dashed tail. Make the entire gripper roughly 8% of the canvas width, with slim strokes comparable to the blue curve.
+The gripper is inserted INTO the curve, not attached beside it: the lower blue segment meets the gripper base, and the upper blue curve resumes above the fingertips with a little clearance. ERASE the original blue curve throughout the area occupied by the gripper. The empty space between its fingers must be transparent, with NO blue curve running through or behind it.
+Do not add a robot arm, wrist extension, circular joint, bolt, ring, extra branch or extra line. Just this one compact gripper replacing a little piece of the rising curve.
+Everything outside that tiny left-side patch must remain identical to the input: blue Gaussian/heavy-tail silhouette, smooth peak, entire descending right side, original orange dashed tail including its existing junction, exact muted blue and clay colors, stroke weights, all spacing, original square canvas framing and transparent background. Do not redesign, recolor, crop, enlarge, or shift the original curves.
+
+Second edit: enlarge and refine the gripper, using the first output as its edit target.
+
+Use case: precise-object-edit.
+Replace ONLY the small orange gripper inserted in the LEFT rising slope of the attached icon with a significantly more polished robotic gripper, about 1.7 times larger.
+Design the replacement as a beautiful compact industrial parallel gripper: a small blue trapezoidal palm/base connecting to the lower blue curve, two balanced slender BLUE jaws rising from either side, each with a crisp angular bend and a short warm ORANGE contact pad at its inward-facing fingertip. The tips point upward and slightly toward each other, separated by a generous open gap. It should read instantly as two designed mechanical fingers, not a hexagonal chain link, horseshoe, pliers, U-shaped magnet, or ring. Use a premium flat vector-like silhouette with subtly rounded outer corners, sharp intentional internal geometry, and well-balanced negative space. No 3D, texture, gradients, outlines in a third color, tiny screws, or circular joints.
+The complete gripper should be about 135 pixels wide and 160 pixels tall relative to this 1254-pixel square image, centered at roughly x=365, y=645. It follows the existing ascending curve, pointing upward. Keep its silhouette legible at small website-icon size. Its blue base flows naturally into the lower curve.
+Clear enough of the underlying curve for the enlarged gripper: NO curve must cross the palm or the empty space between the jaws. The upper blue curve resumes above the fingertips with visible clearance. The gripper itself replaces the missing curve segment; do not attach it on a side branch or add an arm.
+Preserve EVERYTHING else precisely: original square framing, original bell silhouette and peak, entire right blue tail, entire orange dashed tail and junction, original stroke weights outside the edited patch, and transparent background.
+Colors must remain restrained muted periwinkle blue #5261B8 and warm clay orange #BC9577, matching the original icon. The orange fingertip pads are small accents, the gripper's structure is blue.
+
+Third edit: align the gripper axis and center the lower connection.
+
+Use case: precise-object-edit.
+Make a precise alignment correction ONLY to the gripper and its lower connection in the attached icon. Keep the current blue gripper with orange finger pads and its overall size; do not redesign anything else.
+
+The rising blue curve must pass through the gripper's CENTRAL AXIS. Currently the lower curve enters a corner/side of the base, so the gripper is offset and twisted. Fix this:
+- Orient the entire gripper along the natural tangent of the rising curve, about 20 degrees CLOCKWISE from vertical, pointing UP and RIGHT toward the peak.
+- Make the two fingers mirror-symmetric about that tilted central axis. The midpoint of the open gap between the orange tips must aim directly toward the center of the blue curve endpoint above it.
+- Move the bottom of the gripper base slightly LEFT so its exact bottom MIDPOINT lies on the continuation of the incoming lower blue curve. Attach the lower curve smoothly to that midpoint, NOT to a lower-left corner, side, or finger. A short tapered transition from the curve width into the palm is sufficient. No elbow or side branch.
+- The incoming lower curve, base center, midpoint between fingers, and upper blue endpoint should form one visually continuous ascending direction. The base's crossbar should be perpendicular to the gripper's central axis.
+- Keep clear transparent space inside the gripper. No curve through the opening. Keep the slight clearance between the fingertips and the resumed upper curve.
+
+Preserve the exact bell silhouette everywhere outside this local gripper patch, the entire peak, right blue heavy tail, orange dashed Gaussian tail, all colors, stroke weights, original square canvas framing and transparent alpha background. No new joints, circles, decorative details, or arm. This is solely a position/rotation/centerline correction.
+
+Fourth edit: restore the original muted palette. Image 1 is the third output; image 2 is assets/project-icon.png.
+
+Use case: precise-object-edit.
+Image 1 is the edit target. Image 2 is ONLY the exact color reference.
+Change ONLY the colors of image 1 to restore the restrained palette of image 2: all blue fills/strokes should be muted periwinkle #5261B8, all orange fills/strokes should be warm clay #BC9577. No bright royal blue or saturated orange.
+Preserve every shape, position, gripper angle, centered bottom connection, open finger gap, interrupted rising curve, both tails, proportions, stroke widths, square framing and transparent background of image 1 exactly. Do not alter geometry or redraw the composition. Flat solid colors, no gradients, no new edges or decorations.

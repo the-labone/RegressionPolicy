@@ -1,0 +1,119 @@
+{
+  "metric": "Success rate (%)",
+  "simulation_protocol": "Pretrained-model results average 10 evaluation seeds. RoboMimic reports best-checkpoint success averaged across nine tasks, three seeds, state/image observations, and U-Net/Transformer backbones, following the paper teaser.",
+  "real_world_protocol": "Success rate over 50 rollouts per task; U-Net policies trained from scratch.",
+  "methods": [
+    {
+      "key": "MSE",
+      "label": "MSE-Policy",
+      "color": "#c58b55"
+    },
+    {
+      "key": "Flow",
+      "label": "Flow-Policy / DP",
+      "color": "#2b679a"
+    },
+    {
+      "key": "HT",
+      "label": "HT-Policy (ours)",
+      "color": "#089b7a"
+    }
+  ],
+  "simulation": [
+    {
+      "benchmark": "RoboCasa-GR1",
+      "model": "GR00T N1.7",
+      "values": {
+        "MSE": "35.55",
+        "Flow": "42.34",
+        "HT": "50.01"
+      },
+      "source": "tables/exp_large_model.tex, RoboCasa-GR1, Our Evaluations"
+    },
+    {
+      "benchmark": "SimplerEnv",
+      "model": "GR00T N1.7",
+      "aggregation": "Unweighted mean of the Bridge and Fractal benchmark means.",
+      "components": [
+        {
+          "benchmark": "Bridge",
+          "values": {
+            "MSE": "58.51",
+            "Flow": "62.06",
+            "HT": "62.31"
+          }
+        },
+        {
+          "benchmark": "Fractal",
+          "values": {
+            "MSE": "60.60",
+            "Flow": "67.83",
+            "HT": "65.25"
+          }
+        }
+      ],
+      "source": "tables/exp_large_model.tex, SIMPLER / Bridge and SIMPLER / Fractal, Our Evaluations"
+    },
+    {
+      "benchmark": "LIBERO",
+      "model": "π₀.₅",
+      "aggregation": "Four-suite average reported in the paper.",
+      "values": {
+        "MSE": "96.72",
+        "Flow": "97.09",
+        "HT": "96.97"
+      },
+      "source": "tables/exp_large_model.tex, pi_0.5, Our Evaluations"
+    },
+    {
+      "benchmark": "LIBERO-10",
+      "model": "Cosmos 3",
+      "values": {
+        "MSE": "95.10",
+        "Flow": "95.60",
+        "HT": "96.50"
+      },
+      "source": "tables/exp_large_model.tex, Cosmos 3, Our Evaluations"
+    },
+    {
+      "benchmark": "RoboMimic",
+      "generative_baseline": "DP",
+      "aggregation": "Unweighted state/image and U-Net/Transformer average of best-checkpoint success, matching the paper teaser. DP and HT use pre-rounding aggregates; MSE averages the two current main-table backbone means (81.7 and 82.6).",
+      "values": {
+        "MSE": "82.15",
+        "Flow": "94.08333333333333333333333335",
+        "HT": "93.6111111111111111111111111"
+      },
+      "source": "tables/exp_train_scratch.tex; sections/appendix_dp.tex; writing-notes/dp-comparison-table-values.json, aggregate_percent.overall"
+    }
+  ],
+  "real_world": [
+    {
+      "benchmark": "Push-T",
+      "values": {
+        "MSE": "54",
+        "Flow": "86",
+        "HT": "88"
+      },
+      "source": "tables/exp_real_robot.tex, Push-T"
+    },
+    {
+      "benchmark": "Peel-Note",
+      "values": {
+        "MSE": "22",
+        "Flow": "56",
+        "HT": "52"
+      },
+      "source": "tables/exp_real_robot.tex, Peel-Note"
+    },
+    {
+      "benchmark": "Insert-T",
+      "values": {
+        "MSE": "86",
+        "Flow": "92",
+        "HT": "92"
+      },
+      "source": "tables/exp_real_robot.tex, Insert-T"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+Generated with the built-in image_gen tool.
+Source image: assets/project-icon.png
+Output image: assets/project-icon-robot.png
+Transparent background: true
+
+Eight sequential edits, each using the prior output as its edit target.
+The eighth edit also uses assets/project-icon.png as the curve-geometry reference.
+
+1. Initial design
+
+Use case: logo-brand / precise-object-edit.
+Asset type: transparent research-project logo displayed beside a robotics paper title, around 88 by 56 CSS pixels.
+Input image: the existing project icon, used as the edit target and exact palette/style reference.
+Redesign this mark to feel more complete and distinctive by integrating a small recognizable articulated robot arm into the residual-distribution curve. Preserve the appealing periwinkle blue and warm muted clay-orange palette of the reference. The main blue sweeping peak and long right tail should still suggest a heavy-tailed residual distribution, but the rising and falling shape should now also read as an elegant robotic arm with two clearly designed circular joints and a simple two-finger gripper. Integrate the gripper and a short orange dashed reference tail as restrained warm-orange accents. Resolve the arm and statistical curve into one cohesive silhouette, not a robot pasted next to a graph. Keep generous clean negative space and smooth rounded ends.
+Style: polished flat vector-like academic identity mark, confident medium-bold strokes, beautiful simple geometry, clear at thumbnail size. More substance and intentional construction than just two thin curves, while still understated.
+Composition: a compact horizontal mark about 1.65:1 wide, centered and filling most of a landscape canvas, only a small even transparent margin. Real transparent alpha background.
+Keep: reference blue/orange colors, research-curve concept, minimal refined aesthetic.
+Avoid: words, letters, numbers, axes, labels, robot faces, humanoids, cartoon mascots, gears, circuitry, decorative sparkles, glossy rendering, gradients, shadows, white discs, framing badges, textured or colored backgrounds, excessive tiny details.
+
+2. Move robot to the left ascending slope
+
+Use case: precise-object-edit.
+Edit target: the attached transparent robotics/residual-distribution logo. The user likes this design; make a focused layout revision, not a redesign.
+Move the entire articulated robot-arm motif from the top/right descending portion of the blue bell-shaped curve onto the LEFT ASCENDING SLOPE of the curve. This means the rising leg leading up from the left baseline toward the peak — not the peak itself, not the right-hand tail. Place both circular joints and the two-finger gripper along this left ascending side. Let the arm reach upward along the ascending slope; its orange gripper should be on the upper part of the LEFT rising slope, opening upward toward the crest. Make the joints, links, and gripper about 20% larger and more legible as a compact robot-arm motif.
+Restore a clean uninterrupted BLUE curved crest and full descending right slope. Preserve the entire orange dashed reference curve on the RIGHT below the descending blue tail, fully exposed with clear negative-space separation and no robot part overlapping it. No joints and no gripper on the right half of the distribution.
+Preserve the overall distinctive heavy-tailed distribution silhouette, rounded clean strokes, transparent background, flat minimal academic logo design, and horizontal composition. Keep the original restrained periwinkle blue and warm clay-orange color family: blue close to #5261b8, orange close to #bc9577. Preserve the existing identity; only relocate and enlarge the robot motif, restore the unobstructed tail, and gently match these original muted colors.
+Output a single cohesive transparent logo filling most of a landscape canvas with a small even transparent margin. No text, no axes, no badge, no shadows, no background.
+
+3. Separate the right-hand curves
+
+Use case: precise-object-edit.
+Edit the attached transparent logo with one small, targeted change: lift the BLUE curve on the RIGHT descending side slightly upward so the orange dashed tail below it is much easier to distinguish. Create a clean transparent gap about one orange-stroke width between the blue curve and the orange dashed curve over the middle and lower right tail. Make the blue tail slightly heavier / more elevated, using a smooth natural curve that reconnects gracefully to the existing crest and far-right endpoint.
+Keep the orange dashed curve exactly in its existing position and preserve every dash. Keep the robotic arm, both circular joints, the orange gripper on the LEFT ascending segment, all colors, all stroke weights, the overall silhouette size, framing, and transparent background unchanged. Do not move, redraw, or add any robot element. Do not add any text or decorations. This is just a subtle separation of the two right-hand curves.
+
+4. Correct the two joints and expose the gripper further left
+
+Use case: precise-object-edit.
+Asset type: transparent research project logo.
+Edit target: the attached blue distribution curve with an orange dashed tail and a robot arm on the left.
+Fix only the robotic arm anatomy and placement: shift the robot toward the LEFT of the ascending blue slope. Arrange it as a clear serial two-link arm: lower circular shoulder at about 22% image width / 59% image height, upper circular elbow at about 29% width / 35% height, and a short forearm extending from the elbow toward the UPPER LEFT to an exposed orange two-finger gripper around 22% width / 23% height. Use exactly TWO blue circular joints, both on the LEFT ascending side, with a simple blue link between them. The gripper must be at the free end beyond BOTH circles, visibly opening upward-left, with generous clear space between the orange fingers and both blue rings. This should read instantly as a coherent robot arm at small icon size.
+Remove the misplaced circular ring at the top of the bell curve completely, restoring a smooth continuous rounded blue crest there. Remove the current orange shape wedged between the two joints; its replacement is the clear end-effector further left.
+Preserve the original Gaussian curve's overall silhouette, keep its right descending blue curve elevated above the orange dashed tail, and preserve the orange tail's position and all its dashes. Preserve the existing blue and warm orange colors, bold rounded strokes, current framing and scale. Transparent background, no text, no extra decorations. No joint at the bell peak, no circle enclosing or covering the gripper, no orange gripper between the joints.
+
+5. Restore the original muted blue and clay-orange palette
+
+Use case: precise-object-edit.
+This edit must change ONLY the colors of the attached transparent logo. Keep every shape, pixel silhouette, size, placement, curve, circle, gripper and gap exactly unchanged.
+Replace the bright saturated royal blue with a restrained periwinkle blue close to HEX #5261B8 (RGB 82,97,184).
+Replace the saturated vivid orange with a soft warm clay / tan orange close to HEX #BC9577 (RGB 188,149,119).
+Use those two muted solid colors, with clean antialiased edges and no added gradient, glow, outline or shadow. Preserve the transparent background.
+The corrected robot arm already has the right geometry: two rings on the left ascending slope and an exposed gripper extending upper-left. Do not move or redraw it. Preserve the smooth blue peak and separated orange dashed right tail exactly. Only recolor.
+
+6. Fold the wrist into an upward-pointing gripper
+
+Use case: precise-object-edit.
+Edit the attached transparent research logo. Refine ONLY the robot's upper forearm and gripper into a compact, elegant UPWARD-pointing pose.
+The current long forearm sticks awkwardly toward the upper-left. Replace it with a much shorter near-vertical blue wrist rising directly above the upper circular elbow, tilted at most 5 degrees to the left. Place a compact warm clay-orange two-finger gripper directly above this wrist. Its two slim parallel fingers point straight UP toward 12 o'clock, with a clearly open top and a clean gap between the fingertips. Draw a simple squared-U robotic gripper with softly rounded corners, narrower and more restrained than the current wide pincer. Center it around 26% of the image width. The top of the gripper should be approximately level with the top of the bell curve. This folds the robot back into the left ascending segment instead of projecting far out sideways.
+Keep both existing circular blue joints in their current positions below the gripper, fully visible and not overlapping it. Keep the lower arm, smooth blue bell crest, descending blue curve and orange dashed tail unchanged. Preserve the transparent negative space between blue curve and orange tail.
+Style: simple polished flat logo geometry, clean consistent rounded strokes, legible at 96 pixels wide, no new details.
+Preserve the current restrained palette EXACTLY: muted periwinkle blue #5261B8 and muted warm clay orange #BC9577. Do not increase saturation. Preserve the existing canvas framing and overall curve size. Transparent alpha background. No text, no glow, no shadows, no decoration.
+
+7. Reconnect the dashed reference tail with the blue curve
+
+Use case: precise-object-edit.
+Edit ONLY the beginning of the orange dashed curve on the right of the attached transparent logo.
+Currently the orange dashes float disconnected below the blue descending curve. Make them read as a reference curve that BRANCHES SMOOTHLY FROM THE BLUE CURVE: extend the first orange dash upward until its top end actually joins/overlaps the center of the blue descending stroke around the upper-middle of the right slope. Start with the same tangent direction as the blue curve, then gradually peel down and to the left toward the existing second orange dash. There must be a clear visible junction, no transparent gap at the point where the orange reference curve starts. The short first orange segment should meet the blue stroke cleanly, without a bump or extra node.
+Keep the remaining orange dashes and the separated blue heavy tail as they are. Preserve ample separation further down the tail, so both trajectories are legible.
+Everything else MUST stay unchanged: the two blue joint circles on the left ascending slope, the compact orange gripper pointing straight UP above its short vertical wrist, the whole blue curve, framing, stroke thicknesses, proportions, and transparent background.
+Retain the exact muted palette: periwinkle blue #5261B8 and warm clay orange #BC9577. No saturated colors, no extra outlines, text, shadow or decoration.
+
+8. Restore the Gaussian reference tail and outward heavy-tail relationship
+
+Use case: precise-object-edit.
+Image 1 is the logo to edit. Image 2 is the original distribution-curve reference; use its scientifically coherent right-tail geometry.
+Correct the RIGHT HALF of image 1 by constructing it as two distribution curves sharing the same bell-shaped central body:
+1. The Gaussian is the underlying curve. Continue the smooth descent from the bell crest naturally down to the baseline, flattening asymptotically; show the final Gaussian tail as warm clay-orange regular dashes.
+2. The BLUE heavy tail grows outward from that same descending Gaussian flank, smoothly peeling to the RIGHT and ABOVE the dashed Gaussian tail. It decays more slowly and extends further right before approaching THE SAME horizontal zero baseline.
+Both curves must therefore have a common smooth origin/tangent, a graceful tapered opening between them, and one shared baseline. The blue tail is the outward extension of the bell, NOT an unrelated curve above a row of detached dashes. The orange dashes must lie along a continuous plausible Gaussian trajectory from the central peak, with a steadily decreasing slope; do not let any orange dash sink below the common baseline. Remove the current awkward long hanging orange first segment.
+Closely follow the relationship and curvature of the two tails in image 2, scaled to the body of image 1. Keep the blue tail visibly above the dashed tail in the middle, with comfortable separation. Each dash is regular in length, narrow, round-capped, with consistent gaps. A modest 5-6-dash visible Gaussian tail is enough.
+PRESERVE all of the LEFT HALF of image 1: the two blue circular robot joints, short vertical wrist, orange gripper opening straight UP, rising blue curve, overall scale and framing. Retain the simple smooth central crest. Retain muted periwinkle #5261B8 and warm clay #BC9577. Transparent alpha background. No axes, text, extra circles, decoration, shadows or saturation changes.

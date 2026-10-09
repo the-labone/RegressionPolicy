@@ -1,0 +1,166 @@
+{
+  "task": "Sweep into Pile",
+  "dataset": "Bridge",
+  "metric": "Task-average residual RMS",
+  "points": [
+    [
+      5.0002347277943855,
+      0.1897227449839121
+    ],
+    [
+      15.00070418338319,
+      0.20778051909514833
+    ],
+    [
+      25.00117424022147,
+      0.23119465714885623
+    ],
+    [
+      35.00164369581027,
+      0.2581651921307994
+    ],
+    [
+      44.9997652722056,
+      0.22236899277485156
+    ],
+    [
+      55.00023472779441,
+      0.2409348235901214
+    ],
+    [
+      65.00070478463267,
+      0.2516185217868559
+    ],
+    [
+      75.00117424022147,
+      0.2439250970058296
+    ],
+    [
+      85.00164429705977,
+      0.26503120762522964
+    ],
+    [
+      94.99976527220558,
+      0.3368994032392608
+    ]
+  ],
+  "video": {
+    "src": "assets/videos/sweep-into-pile.mp4",
+    "poster": "assets/videos/sweep-into-pile.jpg",
+    "width": 256,
+    "height": 256,
+    "duration": 19.2,
+    "nativeFps": 5,
+    "frameCount": 96,
+    "lastFrameTime": 19.0,
+    "sha256": "13ecb61d7daa2f8cd502048285a27f19fad004e97bb7e4f7c59ff76159482a0a",
+    "metadataVerification": "Verified with ffprobe: width=256, height=256, duration=19.200000, avg_frame_rate=5/1, nb_frames=96."
+  },
+  "low": {
+    "progress": 5.0002347277943855,
+    "rms": 0.1897227449839121,
+    "index": 0
+  },
+  "high": {
+    "progress": 94.99976527220558,
+    "rms": 0.3368994032392608,
+    "index": 9
+  },
+  "timing": {
+    "duration": 10,
+    "keyframes": [
+      {
+        "time": 0,
+        "progress": 0
+      },
+      {
+        "time": 0.8,
+        "progress": 5.0002347277943855
+      },
+      {
+        "time": 2.6,
+        "progress": 5.0002347277943855
+      },
+      {
+        "time": 7.6,
+        "progress": 94.99976527220558
+      },
+      {
+        "time": 9.4,
+        "progress": 94.99976527220558
+      },
+      {
+        "time": 9.966666666666667,
+        "progress": 100
+      }
+    ],
+    "mapping": {
+      "progress": "Piecewise linear interpolation between keyframes, clamped at the first and last keyframes.",
+      "nativeFrame": "Math.round(progress / 100 * (frameCount - 1))",
+      "sourceTime": "nativeFrame / nativeFps",
+      "curveValue": "Linear interpolation between the original curve vertices only within their measured progress range; do not extrapolate from 0% to the first bin or from the final bin to 100%.",
+      "lowFrame": 5,
+      "lowTime": 1.0,
+      "highFrame": 90,
+      "highTime": 18.0
+    }
+  },
+  "provenance": {
+    "curve": "Original Sweep into Pile polyline in assets/figures/residual-scales-web.svg; task-average RMS bins, not measurements of the example clip. Linear coordinate conversion; no fitting or extrapolation.",
+    "dataSource": "../rpp-video/public/data/empirical.json: sweepIntoPile",
+    "figureSource": "assets/figures/residual-scales-web.svg: Sweep into Pile polyline",
+    "extractionScript": "../rpp-video/scripts/prepare-assets.py: scale_vertices(scale_paths[0])",
+    "animationSource": "../rpp-video/src/ScaleScene.tsx",
+    "videoSource": "../rpp-video/public/videos/sweep-into-pile.mp4, copied unchanged from the supplied sweep_into_pile.mp4",
+    "note": "The curve contains measured task-average RMS bins. The video is a separate example episode, not the measurement underlying the aggregate curve. Normalized progress synchronizes the illustration; it does not imply that a video frame has the plotted RMS value."
+  },
+  "illustration": {
+    "candidateActions": "Illustrative candidate actions only, not tracked predictions, measured per-frame residuals, or evidence of a causal relationship.",
+    "low": {
+      "origin": [
+        91,
+        77
+      ],
+      "ends": [
+        [
+          85,
+          109
+        ],
+        [
+          92,
+          111
+        ],
+        [
+          99,
+          109
+        ]
+      ],
+      "label": "Narrower action spread"
+    },
+    "high": {
+      "origin": [
+        196,
+        88
+      ],
+      "ends": [
+        [
+          150,
+          128
+        ],
+        [
+          179,
+          146
+        ],
+        [
+          209,
+          134
+        ]
+      ],
+      "label": "Wider action spread"
+    },
+    "coordinateSpace": {
+      "width": 256,
+      "height": 256
+    }
+  }
+}
