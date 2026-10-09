@@ -1,8 +1,8 @@
 <h1 align="center">Residual Modeling for Regression Policies</h1>
 
 <p align="center">
-  <!-- Paper and Project Page URLs: pending. -->
-  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/paper-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/paper.svg"><img src="assets/readme/paper.svg" width="105" height="42" alt="Paper"></picture>&nbsp;&nbsp;
+  <!-- Project Page URL: pending. -->
+  <a href="https://arxiv.org/abs/2610.12231"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/paper-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/paper.svg"><img src="assets/readme/paper.svg" width="105" height="42" alt="Paper"></picture></a>&nbsp;&nbsp;
   <picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/project-page-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/project-page.svg"><img src="assets/readme/project-page.svg" width="161" height="42" alt="Project Page"></picture>&nbsp;&nbsp;
   <a href="https://huggingface.co/collections/yuchen0187/regressionpolicy"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/models-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/models.svg"><img src="assets/readme/models.svg" width="119" height="42" alt="Models"></picture></a>
 </p>
@@ -213,4 +213,26 @@ uv run scripts/evaluate.py cosmos \
   --vae-path checkpoints/cosmos/assets/wan22_vae/Wan2.2_VAE.pth \
   --deterministic \
   --output-dir evaluation_results/cosmos
+```
+
+<a id="acknowledgements"></a>
+
+## Acknowledgements
+
+Our code builds on [Much Ado About Noising](https://github.com/simchowitzlabpublic/much-ado-about-noising), [Diffusion Policy](https://github.com/real-stanford/diffusion_policy), [Isaac GR00T](https://github.com/NVIDIA/Isaac-GR00T), [OpenPi](https://github.com/Physical-Intelligence/openpi), and [Cosmos Framework](https://github.com/NVIDIA/cosmos-framework). We thank the authors and contributors for making their code and models publicly available.
+
+<a id="citation"></a>
+
+## Citation
+
+```bibtex
+@misc{zhou2026residualmodelingclosesregression,
+  title         = {Residual Modeling Closes the Regression and Generative Policy Gap in Robot Learning},
+  author        = {Yuchen Zhou and Jiacheng You and Weikang Wan and Weijun Dong and Yang Gao and Jiayuan Mao},
+  year          = {2026},
+  eprint        = {2610.12231},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2610.12231}
+}
 ```
